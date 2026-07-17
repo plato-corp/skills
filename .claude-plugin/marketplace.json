@@ -1,0 +1,33 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "plato-skills",
+  "description": "Public agent skills from ThePlato — the workflows we use every day, packaged under the tiro:* namespace.",
+  "owner": {
+    "name": "ThePlato",
+    "email": "dev@theplato.io"
+  },
+  "plugins": [
+    {
+      "name": "tiro",
+      "description": "The LLM Wiki suite and learning workflows from the Tiro team: bootstrap a personal LLM-maintained wiki, ingest sources, query it, keep it healthy, learn Socratically, and (optionally) keep it in sync with your Tiro notes.",
+      "source": "./plugins/tiro",
+      "version": "0.1.0",
+      "author": {
+        "name": "ThePlato",
+        "email": "dev@theplato.io"
+      },
+      "category": "productivity",
+      "keywords": [
+        "llm-wiki",
+        "knowledge-base",
+        "second-brain",
+        "obsidian",
+        "socratic",
+        "tiro",
+        "notes",
+        "meetings",
+        "karpathy"
+      ]
+    }
+  ]
+}

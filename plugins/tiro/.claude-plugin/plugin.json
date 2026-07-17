@@ -1,0 +1,19 @@
+{
+  "name": "tiro",
+  "version": "0.1.0",
+  "description": "LLM Wiki suite from the Tiro team — bootstrap, ingest, query, lint, socratic, sync. A persistent, agent-maintained personal knowledge base.",
+  "author": {
+    "name": "ThePlato",
+    "email": "dev@theplato.io"
+  },
+  "homepage": "https://github.com/plato-corp/skills",
+  "repository": "https://github.com/plato-corp/skills",
+  "keywords": [
+    "llm-wiki",
+    "knowledge-base",
+    "second-brain",
+    "socratic",
+    "tiro",
+    "karpathy"
+  ]
+}
