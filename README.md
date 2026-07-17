@@ -57,3 +57,7 @@ We're a small team in Seoul building [Tiro](https://tiro.ooo) — an AI meeting 
 ## License
 
 [MIT](LICENSE). The LLM Wiki pattern is Andrej Karpathy's idea; the skills, docs, and implementation here are ours.
+
+---
+
+[![Tiro — Perfectly crafted meeting notes](assets/hero.jpg)](https://tiro.ax)
