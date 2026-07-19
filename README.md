@@ -1,8 +1,8 @@
 # ThePlato Skills
 
-**The agent workflows we actually use, every day, at [ThePlato](https://tiro.ooo) — packaged so you can install them in one line.**
+**The agent workflows we actually use, every day, at [ThePlato](https://tiro.ooo?utm_source=github&utm_medium=referral&utm_campaign=skills_readme) — packaged so you can install them in one line.**
 
-We build [Tiro](https://tiro.ooo), an AI meeting assistant, and we run our company on AI agents — engineering, operations, consulting, personal knowledge. This repo is the public slice of that practice: not demos, but the exact skills our team and our AX consulting clients run in production.
+We build [Tiro](https://tiro.ooo?utm_source=github&utm_medium=referral&utm_campaign=skills_readme), an AI meeting assistant, and we run our company on AI agents — engineering, operations, consulting, personal knowledge. This repo is the public slice of that practice: not demos, but the exact skills our team and our AX consulting clients run in production.
 
 ```
 /plugin marketplace add plato-corp/skills
@@ -28,7 +28,7 @@ The suite covers the full lifecycle:
 | [`/tiro:query`](plugins/tiro/skills/query/SKILL.md) | Ask the wiki. Cited answers; valuable syntheses get filed back as analysis pages so exploration compounds. |
 | [`/tiro:lint`](plugins/tiro/skills/lint/SKILL.md) | Health check: contradictions, stale claims, orphans, broken links, missing pages. Prioritized report + fixes. |
 | [`/tiro:socratic`](plugins/tiro/skills/socratic/SKILL.md) | Fact-grounded Socratic learning — 50:50 information and challenge, grounded in your wiki and the web. |
-| [`/tiro:sync`](plugins/tiro/skills/sync/SKILL.md) | Pull your [Tiro](https://tiro.ooo) meeting notes into the wiki, idempotently. Your conversations become part of the knowledge base. |
+| [`/tiro:sync`](plugins/tiro/skills/sync/SKILL.md) | Pull your [Tiro](https://tiro.ooo?utm_source=github&utm_medium=referral&utm_campaign=skills_readme) meeting notes into the wiki, idempotently. Your conversations become part of the knowledge base. |
 | [`/tiro:schedule-sync`](plugins/tiro/skills/schedule-sync/SKILL.md) | Register a recurring daily sync so the wiki stays current by itself. |
 
 Everything except `sync`/`schedule-sync` works with **zero dependencies** — plain markdown, any directory, any agent. If you use Tiro, your meetings flow in automatically; if you don't, the suite never mentions it.
@@ -50,7 +50,7 @@ Everything except `sync`/`schedule-sync` works with **zero dependencies** — pl
 
 ## About ThePlato
 
-We're a small team in Seoul building [Tiro](https://tiro.ooo) — an AI meeting assistant for Korean, Japanese, and English — and running AX (AI transformation) engagements where we set companies up to work the way we do. If this repo is useful to you, [Tiro](https://tiro.ooo) is where our conversations-to-knowledge loop starts, and the `tiro` CLI (`npm i -g @theplato/tiro-cli`) is agent-first by design.
+We're a small team in Seoul building [Tiro](https://tiro.ooo?utm_source=github&utm_medium=referral&utm_campaign=skills_readme) — an AI meeting assistant for Korean, Japanese, and English — and running AX (AI transformation) engagements where we set companies up to work the way we do. If this repo is useful to you, [Tiro](https://tiro.ooo?utm_source=github&utm_medium=referral&utm_campaign=skills_readme) is where our conversations-to-knowledge loop starts, and the `tiro` CLI (`npm i -g @theplato/tiro-cli`) is agent-first by design.
 
 **Contact**: hello@theplato.io
 
@@ -60,4 +60,4 @@ We're a small team in Seoul building [Tiro](https://tiro.ooo) — an AI meeting 
 
 ---
 
-[![Tiro — Perfectly crafted meeting notes](assets/hero.jpg)](https://tiro.ax)
+[![Tiro — Perfectly crafted meeting notes](assets/hero.jpg)](https://tiro.ax?utm_source=github&utm_medium=referral&utm_campaign=skills_readme)
