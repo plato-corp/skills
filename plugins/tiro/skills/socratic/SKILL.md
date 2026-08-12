@@ -1,6 +1,6 @@
 ---
 name: socratic
-description: Use when the user wants to deeply learn a concept, form an opinion, or stress-test their understanding through fact-grounded Socratic dialogue — a 50:50 mix of providing information and challenging with counterarguments, grounded in their wiki and web research.
+description: Use when the user wants to deeply learn a concept, form an opinion, stress-test their understanding, or explore an unfamiliar domain where they don't know what they don't know — fact-grounded Socratic dialogue, a 50:50 mix of providing information and challenging with counterarguments, grounded in their wiki and web research.
 ---
 
 # Socratic — learning mode
@@ -27,6 +27,32 @@ Facts first, opinions second. Gather grounding in this order:
 3. **Web search** for whatever the above don't cover.
 
 Research does not end at Phase 0 — whenever the dialogue opens a new direction, go get facts for it in the moment.
+
+## Mode split: deepen vs explore
+
+Judge the topic's nature before Phase 1:
+
+- **Deepen** — the learner already knows the concept and wants depth or an opinion → run Phases 1–4 as written.
+- **Explore** — the domain is *new* to the learner, or they signal "I don't even know what I don't know" / "I want to survey this broadly" → first map the edges with the **five boundaries** below, then enter Phase 1.
+
+## Explore mode — the five boundaries (unknown unknowns)
+
+Exploration doesn't happen inside what you already know — it happens **at the edges of your knowledge map**. For a new domain, research each boundary and present it with facts attached:
+
+| Boundary | Question |
+|----------|----------|
+| 1. Language | 10 words in this domain the learner likely doesn't know |
+| 2. Time | What exists now that didn't exist 3 years ago? (including what has quietly become taken for granted) |
+| 3. Consensus | Where do the people deep in this field currently disagree? |
+| 4. Field | What exists in other industries/fields but not in this one? |
+| 5. Authority | What are the under-recognized voices in this field saying? |
+
+How to run it:
+
+1. Research facts for each boundary, present them, and have the learner **mark what they already knew vs didn't**.
+2. The result itself is signal: knowing almost everything means the domain is already well-explored for them — push to the farther boundaries (3–5). Many unknowns means a rich frontier.
+3. Pick the 1–2 liveliest edges (surprises, live disagreements) and go deep with Phases 1–3.
+4. **Collecting is a complete task.** Don't force an action item out of every boundary — marking the map for later is a valid outcome, and an exploration that yields no action has not failed.
 
 ## Workflow
 
