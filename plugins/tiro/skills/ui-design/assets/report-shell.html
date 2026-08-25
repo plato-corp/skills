@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiro UI design review</title>
+  <style>
+    /* Replace these report roles with the verified current Tiro semantic tokens. */
+    :root {
+      color-scheme: light;
+      --report-canvas: Canvas;
+      --report-surface: color-mix(in srgb, CanvasText 3%, Canvas);
+      --report-surface-strong: color-mix(in srgb, CanvasText 7%, Canvas);
+      --report-text: CanvasText;
+      --report-muted: color-mix(in srgb, CanvasText 62%, Canvas);
+      --report-border: color-mix(in srgb, CanvasText 16%, Canvas);
+      --report-accent: CanvasText;
+      --report-on-accent: Canvas;
+      --report-focus: Highlight;
+      --report-radius-control: 0.375rem;
+      --report-radius-panel: 0.75rem;
+      --report-space-1: 0.25rem;
+      --report-space-2: 0.5rem;
+      --report-space-3: 0.75rem;
+      --report-space-4: 1rem;
+      --report-space-6: 1.5rem;
+      --report-space-8: 2rem;
+      --report-space-12: 3rem;
+      --report-max: 74rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--report-canvas);
+      color: var(--report-text);
+      font-family: "Pretendard JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      letter-spacing: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--report-focus);
+      outline-offset: 3px;
+    }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--report-max));
+      margin-inline: auto;
+    }
+
+    .report-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--report-space-6);
+      padding-block: var(--report-space-8) var(--report-space-6);
+      border-bottom: 1px solid var(--report-border);
+    }
+
+    .eyebrow,
+    .section-label {
+      margin: 0 0 var(--report-space-2);
+      color: var(--report-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 44rem;
+      margin-bottom: var(--report-space-2);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin-bottom: var(--report-space-4);
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      margin-bottom: var(--report-space-2);
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle,
+    .muted { color: var(--report-muted); }
+
+    .subtitle { margin-bottom: 0; }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: var(--report-space-2);
+    }
+
+    .report-link {
+      display: inline-flex;
+      min-height: 2.5rem;
+      align-items: center;
+      padding: var(--report-space-2) var(--report-space-4);
+      border: 1px solid var(--report-border);
+      border-radius: var(--report-radius-control);
+      background: transparent;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .report-link.primary {
+      border-color: var(--report-accent);
+      background: var(--report-accent);
+      color: var(--report-on-accent);
+    }
+
+    main { padding-block: var(--report-space-8) var(--report-space-12); }
+
+    .report-section + .report-section {
+      margin-top: var(--report-space-12);
+      padding-top: var(--report-space-8);
+      border-top: 1px solid var(--report-border);
+    }
+
+    .summary-grid,
+    .variant-grid,
+    .score-grid {
+      display: grid;
+      gap: var(--report-space-4);
+    }
+
+    .summary-grid { grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); }
+    .variant-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .score-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .panel {
+      padding: var(--report-space-6);
+      border: 1px solid var(--report-border);
+      border-radius: var(--report-radius-panel);
+      background: var(--report-surface);
+    }
+
+    .panel.quiet { background: transparent; }
+
+    .receipt {
+      display: grid;
+      grid-template-columns: max-content minmax(0, 1fr);
+      gap: var(--report-space-2) var(--report-space-4);
+      margin: 0;
+      font-size: 0.8125rem;
+    }
+
+    .receipt dt { color: var(--report-muted); }
+    .receipt dd { margin: 0; }
+
+    .candidate {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--report-border);
+      border-radius: var(--report-radius-panel);
+      background: var(--report-canvas);
+    }
+
+    .candidate-head {
+      padding: var(--report-space-4);
+      border-bottom: 1px solid var(--report-border);
+    }
+
+    .candidate-preview {
+      min-height: 24rem;
+      padding: var(--report-space-4);
+      background: var(--report-surface);
+    }
+
+    .candidate-notes { padding: var(--report-space-4); }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--report-space-4);
+      align-items: baseline;
+      padding-block: var(--report-space-3);
+      border-bottom: 1px solid var(--report-border);
+    }
+
+    .score-row:last-child { border-bottom: 0; }
+
+    .score {
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+    }
+
+    .fixture-note {
+      padding: var(--report-space-4);
+      border-left: 3px solid var(--report-accent);
+      background: var(--report-surface-strong);
+    }
+
+    @media (max-width: 900px) {
+      .summary-grid,
+      .variant-grid,
+      .score-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(calc(100% - 1.25rem), var(--report-max)); }
+      .report-header { align-items: flex-start; flex-direction: column; }
+      .header-actions { justify-content: flex-start; }
+      .report-section + .report-section { margin-top: var(--report-space-8); }
+      .panel { padding: var(--report-space-4); }
+      .receipt { grid-template-columns: 1fr; }
+      .receipt dd + dt { margin-top: var(--report-space-2); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body data-report-mode="decision-brief">
+  <header class="report-header shell">
+    <div>
+      <p class="eyebrow" data-slot="report-mode">Decision Brief</p>
+      <h1 data-slot="report-title">Tiro UI design review</h1>
+      <p class="subtitle" data-slot="report-subtitle">결정해야 할 문제와 현재 판단을 한 문장으로 적습니다.</p>
+    </div>
+    <nav class="header-actions" aria-label="Report actions">
+      <a class="report-link" href="#evidence">근거</a>
+      <a class="report-link primary" href="#recommendation">추천 방향</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="report-section summary-grid" aria-labelledby="verdict-title">
+      <article class="panel">
+        <p class="section-label">Verdict</p>
+        <h2 id="verdict-title" data-slot="verdict-title">먼저 진단할지, 디자인할지, 확정안을 마감할지</h2>
+        <p data-slot="verdict-body">관찰된 문제, 가장 작은 유효 개입, 다음 행동을 적습니다.</p>
+      </article>
+
+      <aside class="panel quiet" aria-labelledby="grounding-title">
+        <p class="section-label" id="grounding-title">Grounding receipt</p>
+        <dl class="receipt">
+          <dt>Design source</dt><dd data-slot="design-source">Verified source</dd>
+          <dt>Ref / commit</dt><dd data-slot="design-ref">Verified ref and SHA</dd>
+          <dt>Files</dt><dd data-slot="governing-files">Files actually read</dd>
+          <dt>Runtime</dt><dd data-slot="runtime-evidence">Rendered consumer inspected</dd>
+          <dt>Conflicts</dt><dd data-slot="known-conflicts">None or explicit conflict</dd>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="report-section" id="evidence" aria-labelledby="evidence-title">
+      <p class="section-label">Evidence</p>
+      <h2 id="evidence-title">사실 · 가정 · 열린 결정</h2>
+      <div class="score-grid" data-slot="evidence-grid">
+        <article class="panel"><h3>Facts</h3><p class="muted">검증한 사실을 적습니다.</p></article>
+        <article class="panel"><h3>Assumptions</h3><p class="muted">아직 검증하지 않은 가정을 적습니다.</p></article>
+      </div>
+    </section>
+
+    <section class="report-section" id="recommendation" aria-labelledby="recommendation-title">
+      <p class="section-label">Direction</p>
+      <h2 id="recommendation-title" data-slot="direction-title">추천 방향 또는 비교 시안</h2>
+      <p class="fixture-note" data-slot="fixture-note">비교 시안이라면 모든 후보가 공유하는 데이터, 제약, edge case를 적습니다.</p>
+      <div class="variant-grid" data-slot="candidate-grid">
+        <article class="candidate">
+          <header class="candidate-head"><h3>Candidate</h3><p class="muted">Decision axes and tradeoff</p></header>
+          <div class="candidate-preview">Product preview</div>
+          <div class="candidate-notes">Why this direction exists</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="report-section" aria-labelledby="scorecard-title">
+      <p class="section-label">Quality gate</p>
+      <h2 id="scorecard-title">화면별 완료 기준</h2>
+      <div class="panel" data-slot="scorecard">
+        <div class="score-row"><span>Criterion and observable 10/10 definition</span><strong class="score">9.0 / 10</strong></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

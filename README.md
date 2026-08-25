@@ -13,6 +13,16 @@ Every skill installs under the `tiro:*` namespace.
 
 ---
 
+## Product design
+
+| Skill | What it does |
+|---|---|
+| [`/tiro:ui-design`](plugins/tiro/skills/ui-design/SKILL.md) | Tiro's in-product UI/UX decision workflow: diagnose the real problem, ground work in the current design system, explore 2–3 material alternatives when useful, and release only candidates that pass a screen-specific quality gate. |
+
+The skill uses progressive disclosure: one thin entry point loads only the product-judgment, interface-quality, prototype/report, Korean UI, or motion guidance the current request needs. Brand and landing-page work are intentionally outside its scope.
+
+---
+
 ## The LLM Wiki suite
 
 The anchor of this repo is a complete toolchain for running a **personal LLM Wiki** — an agent-maintained, interlinked markdown knowledge base, as described in Andrej Karpathy's *LLM Wiki* pattern (all credit for the idea to him; this is our production implementation of it).
