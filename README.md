@@ -13,13 +13,14 @@ Every skill installs under the `tiro:*` namespace.
 
 ---
 
-## Product design
+## Design workflows
 
 | Skill | What it does |
 |---|---|
 | [`/tiro:ui-design`](plugins/tiro/skills/ui-design/SKILL.md) | Tiro's in-product UI/UX decision workflow: diagnose the real problem, ground work in the current design system, explore 2–3 material alternatives when useful, and release only candidates that pass a screen-specific quality gate. |
+| [`/tiro:marketing-visuals`](plugins/tiro/skills/marketing-visuals/SKILL.md) | Tiro blog thumbnails and external announcement visuals: define the intended viewer change, diagnose AI-smell as a purpose–evidence disconnect, compose imagery and type together, and release only complete, traceable assets. |
 
-The skill uses progressive disclosure: one thin entry point loads only the product-judgment, interface-quality, prototype/report, Korean UI, or motion guidance the current request needs. Brand and landing-page work are intentionally outside its scope.
+Both skills use progressive disclosure and load only the guidance the request needs. `ui-design` is for product GUI. `marketing-visuals` is for external images such as blog covers, feature releases, security and trust news, compatibility, voice capabilities, investment, and company announcements. Landing-page conversion and responsive page architecture remain separate work.
 
 ---
 
@@ -46,11 +47,13 @@ Everything except `sync`/`schedule-sync` works with **zero dependencies** — pl
 ## Getting started in 10 minutes
 
 1. Install (two lines above).
-2. Run `/tiro:bootstrap-wiki` and answer three questions — what the wiki is for, where it lives, what language.
-3. Drop one article/paper/note into `raw/` and watch the first ingest touch a dozen pages.
-4. Open the folder in [Obsidian](https://obsidian.md) — the agent is the writer, Obsidian is your reading UI. The graph view shows your knowledge taking shape.
-5. Ask it something with `/tiro:query`. Learn something hard with `/tiro:socratic`.
-6. (Tiro users) `/tiro:sync`, then `/tiro:schedule-sync` — and your wiki grows while you sleep.
+2. For product UI, run `/tiro:ui-design`.
+3. For external images, run `/tiro:marketing-visuals`.
+4. For a personal wiki, run `/tiro:bootstrap-wiki` and answer three questions — what the wiki is for, where it lives, what language.
+5. Drop one article/paper/note into `raw/` and watch the first ingest touch a dozen pages.
+6. Open the folder in [Obsidian](https://obsidian.md) — the agent is the writer, Obsidian is your reading UI. The graph view shows your knowledge taking shape.
+7. Ask it something with `/tiro:query`. Learn something hard with `/tiro:socratic`.
+8. (Tiro users) `/tiro:sync`, then `/tiro:schedule-sync` — and your wiki grows while you sleep.
 
 ## How we use this ourselves
 

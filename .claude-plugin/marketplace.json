@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "plato-skills",
-  "description": "Public agent skills from ThePlato — the workflows we use every day, packaged under the tiro:* namespace.",
+  "description": "Public agent skills from ThePlato — Tiro design workflows, LLM-maintained wikis, grounded learning, and note sync under the tiro:* namespace.",
   "owner": {
     "name": "ThePlato",
     "email": "dev@theplato.io"
@@ -9,9 +9,9 @@
   "plugins": [
     {
       "name": "tiro",
-      "description": "Agent workflows from the Tiro team for product UI design, LLM-maintained wikis, grounded learning, and Tiro note sync.",
+      "description": "Agent workflows from the Tiro team for product UI, marketing visuals, LLM-maintained wikis, grounded learning, and Tiro note sync.",
       "source": "./plugins/tiro",
-      "version": "0.2.0",
+      "version": "0.4.0",
       "author": {
         "name": "ThePlato",
         "email": "dev@theplato.io"
@@ -30,7 +30,10 @@
         "ui-design",
         "ux",
         "design-system",
-        "product-design"
+        "product-design",
+        "marketing-visuals",
+        "blog-thumbnail",
+        "brand-design"
       ]
     }
   ]
