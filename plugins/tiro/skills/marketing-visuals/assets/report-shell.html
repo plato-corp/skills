@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tiro marketing visual review</title>
+  <style>
+    @font-face{font-family:HahmletTiro;src:url('fonts/Hahmlet-W510.ttf') format('truetype');font-weight:510;font-display:swap}
+    @font-face{font-family:PretendardTiro;src:url('fonts/Pretendard.woff2') format('woff2');font-weight:100 900;font-display:swap}
+    :root{
+      --canvas:#FAFAF9;--surface:#FFFFFF;--soft:#F5F5F4;--ink:#3A2018;--body:#57534E;
+      --muted:#78716C;--line:#E7E5E4;--max:92rem;--space-1:.25rem;--space-2:.5rem;
+      --space-3:.75rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem
+    }
+    *{box-sizing:border-box}
+    html{background:var(--canvas)}
+    body{margin:0;background:var(--canvas);color:var(--ink);font-family:PretendardTiro,-apple-system,BlinkMacSystemFont,sans-serif;word-break:keep-all;overflow-wrap:break-word;word-spacing:0;letter-spacing:0}
+    body[data-report-mode="message-brief"] main:not([data-mode="message-brief"]),
+    body[data-report-mode="comparison-board"] main:not([data-mode="comparison-board"]),
+    body[data-report-mode="final-asset-review"] main:not([data-mode="final-asset-review"]){display:none}
+    .shell{width:min(calc(100% - 3rem),var(--max));margin-inline:auto}
+    .report-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(18rem,.55fr);gap:var(--space-12);align-items:end;padding-block:var(--space-12) var(--space-8);border-bottom:1px solid var(--line)}
+    .eyebrow{display:flex;align-items:center;gap:.65rem;margin:0 0 var(--space-3);color:var(--body);font-size:.7rem;font-weight:720;letter-spacing:.04em;text-transform:uppercase}.eyebrow::before{content:"";width:1.6rem;height:1px;background:var(--ink)}
+    h1,h2,h3,p{margin-top:0}h1{margin-bottom:0;font-family:HahmletTiro,serif;font-size:clamp(2.3rem,5vw,4.8rem);font-weight:510;line-height:1.08;letter-spacing:-.07em}h2{margin-bottom:var(--space-4);font-size:1.2rem;line-height:1.4;letter-spacing:-.02em}h3{margin-bottom:var(--space-2);font-size:.95rem;line-height:1.45;letter-spacing:-.01em}
+    .intro{margin:0;color:var(--body);font-size:.86rem;line-height:1.65;letter-spacing:-.01em}
+    main{padding-block:var(--space-8) 5rem}.section+.section{margin-top:var(--space-12);padding-top:var(--space-8);border-top:1px solid var(--line)}.section-label{margin:0 0 var(--space-2);color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.025em;text-transform:uppercase}
+    .summary{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(20rem,.85fr);gap:var(--space-6)}.panel{padding:var(--space-6);border:1px solid var(--line);background:var(--surface)}.panel.quiet{background:transparent}.lead{margin-bottom:0;color:var(--body);font-size:.9rem;line-height:1.65;letter-spacing:-.01em}
+    .receipt{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.45rem 1rem;margin:0;font-size:.76rem;line-height:1.55}.receipt dt{color:var(--muted)}.receipt dd{margin:0}
+    .brief-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}.brief-grid .panel{min-height:9rem}.brief-grid p{margin-bottom:0;color:var(--body);font-size:.8rem;line-height:1.6;letter-spacing:-.01em}
+    .candidate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}.candidate{min-width:0}.candidate-head{display:flex;justify-content:space-between;gap:var(--space-4);align-items:baseline;margin-bottom:var(--space-3)}.candidate-head h3,.candidate-head p{margin-bottom:0}.candidate-head p{color:var(--muted);font-size:.7rem}
+    .artboard{position:relative;container-type:inline-size;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(58,32,24,.14);background:#F7F4F0;isolation:isolate}.artboard>img.background{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}.artboard::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+    .art-label{position:absolute;top:6.5%;left:4.8%;display:flex;align-items:center;gap:1.25cqw;font-size:1.15cqw;font-weight:760;line-height:1;letter-spacing:.035em;text-transform:uppercase}.art-label::before{content:"";width:3.4cqw;height:1px;background:var(--ink)}
+    .art-title{position:absolute;left:4.8%;top:20.5%;width:51%;margin:0;font-family:HahmletTiro,serif;font-size:5.25cqw;font-weight:510;line-height:1.1;letter-spacing:-.07em}.platforms{position:absolute;left:4.9%;bottom:7.8%;display:flex;gap:.65cqw}.platforms span{padding:.78cqw 1.05cqw;border:1px solid rgba(58,32,24,.36);border-radius:999px;background:rgba(250,250,249,.78);font-size:.88cqw;font-weight:720}.brand{position:absolute;right:3.3%;bottom:5.8%;width:3.25cqw;height:3.25cqw}
+    .candidate-note{margin:.75rem 0 0;color:var(--body);font-size:.74rem;line-height:1.55;letter-spacing:-.01em}
+    .tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6)}table{width:100%;border-collapse:collapse;border-top:1px solid var(--ink);font-size:.72rem}th,td{padding:.7rem .55rem;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}th{color:var(--body);font-weight:650}.score{text-align:right;font-variant-numeric:tabular-nums;font-weight:750}.note{margin:var(--space-4) 0 0;color:var(--muted);font-size:.7rem;line-height:1.6;letter-spacing:-.01em}
+    @media(max-width:900px){.report-head,.summary,.candidate-grid,.tables{grid-template-columns:1fr}.brief-grid{grid-template-columns:1fr 1fr}.shell{width:min(calc(100% - 1.5rem),var(--max))}}
+    @media(max-width:620px){.report-head{gap:var(--space-6);padding-top:var(--space-8)}.brief-grid{grid-template-columns:1fr}.panel{padding:var(--space-4)}.receipt{grid-template-columns:1fr}.receipt dd+dt{margin-top:.35rem}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body data-report-mode="final-asset-review">
+  <header class="report-head shell">
+    <div><p class="eyebrow">Tiro marketing visuals · Final asset review</p><h1>소식의 무게가<br>다르게 보이도록</h1></div>
+    <p class="intro">보고서 모드는 body의 data-report-mode를 message-brief, comparison-board, final-asset-review 중 하나로 바꿉니다. 실제 작업에서는 확인된 메시지와 근거로 예시 내용을 교체합니다.</p>
+  </header>
+
+  <main class="shell" data-mode="message-brief">
+    <section class="section summary">
+      <article class="panel"><p class="section-label">One-second message</p><h2>Tiro에 팀용 워크스페이스가 생겼다</h2><p class="lead">이미지보다 먼저 고정할 단 한 문장입니다. 제목과 장면이 이 문장을 증명하지 못하면 시각 작업을 시작하지 않습니다.</p></article>
+      <aside class="panel quiet"><p class="section-label">Grounding receipt</p><dl class="receipt"><dt>Design source</dt><dd>plato-corp/design</dd><dt>Ref / commit</dt><dd>검증한 ref와 SHA</dd><dt>Governing files</dt><dd>실제로 읽은 브랜드·타입·색상 파일</dd><dt>Typography</dt><dd>Hahmlet W510 광학 기준</dd><dt>Mood reference</dt><dd>제공된 레퍼런스 또는 가중 Tiro 보드</dd><dt>Conflicts</dt><dd>없음 또는 명시한 충돌</dd></dl></aside>
+    </section>
+    <section class="section"><p class="section-label">Decision frame</p><h2>사실 · 가정 · 열린 결정</h2><div class="brief-grid"><article class="panel"><h3>Verified facts</h3><p>출처가 있는 제품·회사·인증 사실만 기록합니다.</p></article><article class="panel"><h3>Evidence anatomy</h3><p>기능 변화, 인증 증거, 지원 대상처럼 무엇이 앞에 와야 하는지 정합니다.</p></article><article class="panel"><h3>Next action</h3><p>재사용, 재조합, 신규 생성 중 가장 작은 유효 개입을 선택합니다.</p></article></div></section>
+  </main>
+
+  <main class="shell" data-mode="comparison-board">
+    <section class="section"><p class="section-label">Comparison board</p><h2>같은 메시지, 다른 결정축</h2><p class="lead">후보는 실제 카피와 근거를 공유합니다. 메시지·증거 구조·이미지와 글자의 관계가 물질적으로 다를 때만 이 candidate 블록을 2–3개로 복제합니다.</p></section>
+    <section class="section candidate-grid">
+      <article class="candidate"><header class="candidate-head"><h3>Candidate A · Compatibility-led</h3><p>Supported target first</p></header><div class="artboard"><img class="background" src="moodboard/07-compatibility-reference.png" alt="연결된 기기 조형"><div class="art-label">New support</div><h3 class="art-title">Tiro가<br>Apple Watch를<br>지원합니다</h3><div class="platforms"><span>APPLE WATCH</span><span>iOS</span></div><img class="brand" src="tiro-mark.svg" alt="Tiro"></div><p class="candidate-note">지원 대상과 연결 관계를 먼저 읽히게 하는 기준작입니다.</p></article>
+    </section>
+  </main>
+
+  <main class="shell" data-mode="final-asset-review">
+    <section class="section summary"><article><p class="section-label">Confirmed composition</p><h2>03 · 기기·소프트웨어 지원</h2><p class="lead">사용자가 거의 그대로 써도 된다고 판단한 기준작입니다. 실제 사용 시 지원 범위와 플랫폼 표기는 반드시 현재 사실로 교체·검증합니다.</p></article><aside class="panel quiet"><p class="section-label">Release state</p><dl class="receipt"><dt>Canvas</dt><dd>1200 × 675</dd><dt>Headline</dt><dd>Hahmlet W510</dd><dt>Utility / body</dt><dd>Pretendard</dd><dt>Text layer</dt><dd>Editable HTML</dd><dt>Image text</dt><dd>None</dd></dl></aside></section>
+    <section class="section"><div class="candidate"><div class="artboard"><img class="background" src="moodboard/07-compatibility-reference.png" alt="연결된 기기 조형"><div class="art-label">New support</div><h3 class="art-title">Tiro가<br>Apple Watch를<br>지원합니다</h3><div class="platforms"><span>APPLE WATCH</span><span>iOS</span></div><img class="brand" src="tiro-mark.svg" alt="Tiro"></div></div></section>
+    <section class="section tables">
+      <div><p class="section-label">Optical change log</p><table><thead><tr><th>Role</th><th>Previous</th><th>New</th><th>Reason</th></tr></thead><tbody><tr><td>Title</td><td>72px 상당</td><td>63px 상당</td><td>영문·한글 혼합 폭과 기기 조형 충돌을 해소</td></tr></tbody></table></div>
+      <div><p class="section-label">Quality gate</p><table><thead><tr><th>Criterion and observable 10/10 target</th><th class="score">Score</th></tr></thead><tbody><tr><td>1초 이해도 · 지원 대상과 변화가 설명 없이 읽힘</td><td class="score">9.4</td></tr><tr><td>유형 구분성 · 호환 소식임이 다른 발표와 혼동되지 않음</td><td class="score">9.6</td></tr><tr><td>타이포 · 한국어 줄바꿈과 이미지 충돌이 없음</td><td class="score">9.2</td></tr><tr><td>운영 확장성 · 실제 지원 환경과 채널별 재조판이 가능</td><td class="score">9.4</td></tr></tbody></table></div>
+    </section>
+    <p class="note">모든 핵심 항목이 9.0 이상일 때만 후보로 공유합니다. 실제 제품 지원 범위·채널 크기·출처 검증은 self-score와 별도의 완료 조건입니다.</p>
+  </main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "tiro",
-  "version": "0.1.0",
-  "description": "LLM Wiki suite from the Tiro team — bootstrap, ingest, query, lint, socratic, sync. A persistent, agent-maintained personal knowledge base.",
+  "version": "0.4.0",
+  "description": "Agent workflows from the Tiro team for product UI, marketing visuals, LLM-maintained wikis, grounded learning, and Tiro note sync.",
   "author": {
     "name": "ThePlato",
     "email": "dev@theplato.io"
@@ -14,6 +14,13 @@
     "second-brain",
     "socratic",
     "tiro",
-    "karpathy"
+    "karpathy",
+    "ui-design",
+    "ux",
+    "design-system",
+    "product-design",
+    "marketing-visuals",
+    "blog-thumbnail",
+    "brand-design"
   ]
 }
