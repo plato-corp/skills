@@ -1,7 +1,7 @@
 # Tiro UI Design Skill — Design Specification
 
-Date: 2026-08-25  
-Status: review required before implementation  
+Date: 2026-08-25
+Status: implemented and evaluated
 Target repository: `plato-corp/skills`
 
 ## 1. Goal
