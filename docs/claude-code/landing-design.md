@@ -17,6 +17,13 @@ Restart Claude Code, or run `/reload-plugins` after an update. The skill is then
 /tiro:landing-design
 ```
 
+Before the release branch is merged, test that exact GitHub branch with:
+
+```text
+/plugin marketplace add plato-corp/skills@codex/tiro-landing-design
+/plugin install tiro@plato-skills
+```
+
 To fetch a newer release:
 
 ```text
