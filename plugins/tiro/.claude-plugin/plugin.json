@@ -1,7 +1,7 @@
 {
   "name": "tiro",
-  "version": "0.4.0",
-  "description": "Agent workflows from the Tiro team for product UI, marketing visuals, LLM-maintained wikis, grounded learning, and Tiro note sync.",
+  "version": "0.5.0",
+  "description": "Agent workflows from the Tiro team for product UI, landing pages, marketing visuals, LLM-maintained wikis, grounded learning, and Tiro note sync.",
   "author": {
     "name": "ThePlato",
     "email": "dev@theplato.io"
@@ -19,6 +19,9 @@
     "ux",
     "design-system",
     "product-design",
+    "landing-design",
+    "landing-page",
+    "responsive-web-design",
     "marketing-visuals",
     "blog-thumbnail",
     "brand-design"
