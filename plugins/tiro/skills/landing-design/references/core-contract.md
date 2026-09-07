@@ -18,6 +18,10 @@ When the user explicitly requests work without intermediate confirmation, record
 
 Do not compose or implement until every applicable gate has evidence. Missing evidence is not permission to invent a local answer; preserve the current family or stop at the smallest unresolved decision.
 
+Search for the governing source before concluding it does not exist. Inspecting the one file you expected and stopping is not a search: token, type, brand, and diagram rules frequently live in a decision record or report rather than in code. Record each governing document you found and what it governs, so a later reader can tell a rule that was read from a rule that was assumed.
+
+Never harden an unsourced rule. A rule you inferred may guide a draft, but it must not become a test, a lint, a locked token, or any other mechanism that will later be cited as compliance. Doing so converts a guess into a constraint and removes the means of noticing it was wrong. Every enforced rule cites the document or the observed defect it came from.
+
 | Gate | Required evidence |
 |---|---|
 | Approved source, when porting or integrating | Active `fidelity-port`; canonical path or URL and capture provenance; source-owned and destination-owned boundary; protected-decision ledger; explicit deltas; mechanical translation method; pre-edit source or rendered checks |
