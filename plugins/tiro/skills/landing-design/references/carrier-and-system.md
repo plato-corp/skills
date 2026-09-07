@@ -5,7 +5,7 @@ Read this module when the carrier, content relationship, color climate, componen
 ## Fast paths
 
 - Stable reading, form, table, disclosure, and ordinary controls default to semantic DOM; bounded topology defaults to SVG when that relationship is already clear. Record the reason inline without loading the rendering-medium reference.
-- Load [rendering-medium.md](rendering-medium.md) only when time, depth, continuity, procedure, many marks, or direct manipulation could materially change comprehension, or when two plausible media remain unresolved.
+- Load [rendering-medium.md](rendering-medium.md) for every decisive screen. Skip it only after recording which medium-risk predicate is false and why; time, depth, continuity, procedure, many marks, or direct manipulation each make it mandatory, as does any screen with two plausible media. `The stack is React`, `DOM is faster to build`, and `the relationship looks simple` are not predicates.
 - Equivalent prose or disclosure sections may share one section-model contract. Model each section separately only when its entities, relationships, protected state, or semantic invariant differs.
 
 These predicates scope the preserved requirements below; once triggered, none of their carrier, system, separation, or spatial safeguards may be skipped.

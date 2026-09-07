@@ -11,7 +11,7 @@
       "name": "tiro",
       "description": "Agent workflows from the Tiro team for product UI, landing pages, marketing visuals, LLM-maintained wikis, grounded learning, and Tiro note sync.",
       "source": "./plugins/tiro",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "author": {
         "name": "ThePlato",
         "email": "dev@theplato.io"
