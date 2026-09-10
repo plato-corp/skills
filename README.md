@@ -18,10 +18,10 @@ Every skill installs under the `tiro:*` namespace.
 | Skill | What it does |
 |---|---|
 | [`/tiro:ui-design`](plugins/tiro/skills/ui-design/SKILL.md) | Tiro's in-product UI/UX decision workflow: diagnose the real problem, ground work in the current design system, explore 2–3 material alternatives when useful, and release only candidates that pass a screen-specific quality gate. |
-| [`/tiro:landing-design`](plugins/tiro/skills/landing-design/SKILL.md) | Owns Tiro landing pages and promotional subpages from visitor job, facts, copy, and reference premise through art direction, responsive implementation, integration, and rendered release review. |
+| [`/tiro:landing-design`](plugins/tiro/skills/landing-design/SKILL.md) | Builds coherent landing pages with clear heading-only storytelling, section references, continuous backgrounds, scroll behavior, and project-specific quality criteria verified across desktop, tablet, and mobile. |
 | [`/tiro:marketing-visuals`](plugins/tiro/skills/marketing-visuals/SKILL.md) | Tiro blog thumbnails and external announcement visuals: define the intended viewer change, diagnose AI-smell as a purpose–evidence disconnect, compose imagery and type together, and release only complete, traceable assets. |
 
-The design skills use progressive disclosure and load only the guidance the request needs. `ui-design` is for product GUI. `landing-design` owns persuasive, explanatory, decision, and routing pages. `marketing-visuals` is for external images such as blog covers, feature releases, security and trust news, compatibility, voice capabilities, investment, and company announcements.
+The landing skill keeps its essential workflow in one file and generates its design contract and review criteria for each project; the other design skills retain their own workflows. `ui-design` is for product GUI. `landing-design` owns persuasive, explanatory, decision, and routing pages. `marketing-visuals` is for external images such as blog covers, feature releases, security and trust news, compatibility, voice capabilities, investment, and company announcements.
 
 For installation, autonomous usage, and a paste-ready Claude Code prompt, see the [Claude Code landing-design guide](docs/claude-code/landing-design.md).
 

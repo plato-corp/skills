@@ -1,134 +1,64 @@
 ---
 name: landing-design
-description: Use when designing, prototyping, implementing, or reviewing Tiro public landing pages and promotional subpages whose primary job is persuasion, explanation, decision support, routing, or conversion—including ROI, pricing, and plan selectors and their interaction states; not in-product GUI or standalone channel assets.
+description: "Build or redesign complete product and campaign landing pages with clear heading-led storytelling, section-specific layout references, continuous backgrounds, scroll interactions, and separately refined desktop/tablet/mobile views. Generate project-specific quality criteria before work and verify the rendered result before claiming completion. For focused landing edits, preserve the unaffected design."
 ---
 
-<!-- legacy:entry:start -->
-# Tiro Landing Design
+# Landing Page Studio
 
-Own the page from message and evidence through art direction, responsive implementation, and rendered verification. Operate as the lead contract and specialist hub: keep one complete master, resolve one material decision at a time, and treat references and external skills as inputs to a Tiro decision rather than authority to copy.
+**건당 억 단위 프로젝트를 책임지는 랜딩페이지 디자인 스튜디오 대표의 기준으로 기획·디자인·구현·검수를 수행한다.** 이 역할은 높은 판단 기준이며 결과의 가격·품질을 증명하는 주장은 아니다. 사용자의 브리프를 바탕으로 필요한 내용을 이번 프로젝트에 맞게 결정한다. 아래 작업 순서를 직접 실행하며 별도 규칙 트리를 탐색하지 않는다.
 
-Use this as Tiro's public-page design contract. It complements `ui-design`: route recurring in-product GUI work there, while this skill owns persuasive, explanatory, decision, and routing pages through rendered release review.
+**적용 범위부터 정한다.** 전체 제작·전면 재설계는 아래 순서를 모두 수행한다. 제목·간격 같은 좁은 수정은 영향받은 요구와 다른 기기의 회귀만 확인하며, 전체 문서·60개 평가표·레퍼런스 조사를 새로 만들거나 두 스크롤 효과를 추가하지 않는다.
 
-## Priority order
+## 1. 이번 프로젝트의 기준부터 만든다
 
-Resolve landing quality in this order:
+- 기존 프로젝트 기록과 제품 자료를 확인한다. 방문자, 해결할 문제, 제품이 주는 구체적인 변화, 최종 행동을 정한다. 실제 기능·수치·고객·인증·후기를 지어내지 않는다.
+- **구현 전에 `LANDING-DESIGN.md`를 만든다.** 기존 파일이 있으면 읽고 이어 쓴다. 브리프에서 도출한 핵심 요구, 제목의 이야기 순서, 섹션별 역할·그래픽·강약·레퍼런스, 표현 매체·모션 계획, 공통 스타일과 기기별 구성을 기록한다.
+- 폰트·한국어 지원·대체 폰트, 제목/본문의 크기·굵기·행간·자간, 색 역할, 배경, 컨테이너·기준축·간격을 실제 구현 값으로 정한다. 승인된 시스템이 있으면 연결한다. 과거 티로 페이지의 특정 폰트 크기나 정렬을 자동 적용하지 않는다.
+- **이 프로젝트의 성공을 좌우하는 평가 영역 6개를 선정하고 영역마다 10개씩, 총 60개 평가 항목을 `LANDING-REVIEW.md`에 직접 만든다.** 범용 평가표를 복사하지 않는다. 항목마다 대상 섹션/동작/기기, 관찰할 결과, 4.5점 통과 조건, 확인 방법을 작성하고 초기 점수는 미검증으로 둔다.
+- 아래 필수 요구가 프로젝트 평가표에서 빠지지 않게 연결한다. 제목의 명료성, 배경·섹션 연결, 레퍼런스 적용, 정보의 강약, 모션, 공통 스타일, 세 기기의 완성도와 실제 사용성을 평가에 포함한다. 이를 반드시 같은 이름의 6개 영역으로 분류할 필요는 없다.
+- 평가 기준은 구현 전에 정한다. 결과에 맞춰 기준을 낮추거나 문제 항목을 삭제하지 않는다. 브리프가 바뀌면 변경 이유를 남기고 관련 결과를 다시 확인한다.
 
-1. Reader orientation and task
-2. Causal argument and proof
-3. Composition and carrier
-4. Site family and design-system conformance
-5. Mechanical correctness
+## 2. 제목만 이어 읽어도 뜻이 통하게 한다
 
-A later pass cannot compensate for an earlier failure. A token-correct, responsive, test-passing page still fails when the visitor cannot state what to read, do, decide, and inspect next.
+- **방문자가 큰 타이틀만 읽는다고 가정한다.** Hahmlet 같은 타이틀 폰트의 분위기가 카피의 불명료함을 가려주지 않는다. 폰트 선택 자체를 고정하지는 않는다.
+- 실제 페이지의 대제목을 순서대로 뽑아 한 덩어리로 붙여 읽는다. 초안과 최종 렌더 양쪽에서 검사하고, 최종 추출본을 검수 기록에 남긴다. 본문·그래픽·작성자의 구두 해설 없이도 무엇을 해주는 제품이고 어떤 변화가 생기는지 이해되어야 한다.
+- 각 제목에서 누가/무엇이 어떤 일을 하거나 어떤 이점을 얻는지 짚는다. 주어를 매번 반복할 필요는 없지만, 제품을 모르는 독자가 숨은 맥락을 추측해야 하면 다시 쓴다. 문장을 시적으로 만들기 위해 기능·대상·행동을 감추지 않는다.
+- 예: “흩어진 순간이 하나의 흐름으로”는 실제 제품이 회의 기록 도구라면 “여러 회의의 결정사항을 한곳에 모으세요”처럼 검증된 변화로 바꾼다. 이 예시를 다른 제품의 사실로 복사하지 않는다.
+- 이어서 **제목+그래픽만으로 하나의 이야기가 연결되는지** 검사한다. 제목만 읽기와 제목+그래픽 검사는 서로 대체하지 않는다.
+- **아이브로우 금지.** 제목 위 장식용 소제목·카테고리·번호를 붙이지 않는다. 필요한 입력 레이블·범례·내비게이션은 유지한다. 유사 문장은 통합·요약하고, 지워도 이해·판단·행동이 같으면 문장이나 섹션을 삭제·통합한다.
 
-When `fidelity-port` is active, preserving the approved source precedes this order. Do not improve the source by silently re-running page strategy or art direction.
+## 3. 실제 레퍼런스를 각 섹션에 적용한다
 
-<!-- legacy:entry:end -->
+- 완성도로 반복 언급되는 사이트나 주목받는 스타트업을 우선 조사하고, **모든 콘텐츠 섹션에 실제 확인한 좋은 레이아웃 레퍼런스**를 연결한다. 유명세와 이번 내용에 맞는지는 따로 판단한다. 확인하지 않은 평판을 사실처럼 쓰지 않는다.
+- 사이트를 직접 열고 해당 화면을 확인한다. `URL·확인 날짜·확인한 화면 / 가져올 배치 원리 / 우리 콘텐츠에 맞춘 변경 / 구현 위치`를 짧게 기록한다. 한 사이트를 여러 섹션에 사용해도 된다. 이름이나 검색 요약만 읽으면 조사 완료가 아니다.
+- 배치 원리를 가져오되 레퍼런스마다 다른 폰트·색·배경을 복사해 붙이지 않는다. 이미지를 사용한다면 사용 권한을 별도로 확인한다. 확인할 수 없는 레퍼런스는 미검증으로 남긴다.
 
-<!-- legacy:actions:start -->
-## Operate as the landing hub
+## 4. 전체 구성·그래픽·움직임을 함께 설계한다
 
-Name the active action and resume at the first unresolved gate. Do not replay the full workflow when the request is a bounded review or correction.
+- **페이지 전체가 연결된 배경을 갖게 한다. 섹션을 나누려고 100vw 색면 띠를 까는 것은 금지한다.** 여백·밀도·크기·그래픽·공통 축으로 장면을 구분한다. 페이지 전체의 배경이나 콘텐츠 내부의 의미 있는 면까지 금지하는 것은 아니다.
+- 정보와 시각 강도를 강–약–중–강–약처럼 구성한다. 큰 제목+같은 카드+같은 등장 효과를 계속 나열하지 않는다. 전체 축소 보기에서 강약을 확인하고, 개별 섹션이 좋아도 전체 흐름을 해치면 재구성한다.
+- 내용의 관계에 맞춰 그래픽을 만든다. 순서=흐름, 변화=이전/이후, 포함=경계, 비교=같은 축, 동등 항목=목록/카드. 다른 관계를 모두 동등한 카드로 바꾸지 않는다. 설명 문장을 가려도 핵심 관계가 읽히는지 확인한다.
+- **서로 다른 스크롤 관련 액션을 2종 이상 구현한다.** 같은 페이드인을 여러 섹션에 쓰는 것은 1종이다. 상태가 진행되는 제품 장면, 다음 섹션으로 연결되는 그래픽 변형, 읽기 위치에 반응하는 탐색 등 내용에 맞는 행동을 고른다. 기본 스크롤을 빼앗지 않는다.
+- 정적 페이지를 끝내고 모션을 덧붙이지 말고 시작·중간·종료 구도를 함께 설계한다. 중간 정지·역스크롤·빠른 스크롤·재진입에도 구도가 성립해야 한다. 읽기나 CTA를 위해 효과 종료를 기다리게 하지 않는다.
+- **HTML/CSS·SVG·Canvas·WebGL·이미지·영상 중 장면에 맞는 표현을 선택하고 혼합을 지향한다.** 구현하기 쉽다는 이유만으로 전부 HTML 카드로 만들지 않는다. 표현 목적을 먼저 정하고 라이브러리는 나중에 선택한다. 혼합 자체를 위한 불필요한 기술은 추가하지 않는다.
+- 시각적 즐거움·분위기·브랜드 기억도 유효한 표현 목적이다. 모든 장식에 기능적 설명을 강요하지 않는다. 다만 핵심 내용과 행동을 가리거나 읽기를 지연시키지 않는다.
+- 텍스트·주요 행동은 접근 가능한 HTML에 유지한다. 모션 감소 설정이나 렌더러 로딩 실패에서도 의미·행동을 보존하고 지속 렌더링은 화면 밖/비활성 탭에서 멈춘다.
+- 마지막 CTA는 앞에서 쌓인 가치와 다음 행동을 연결한다. 아무 페이지에 옮겨도 같은 마무리라면 문맥을 보강한다. 색면 띠로 마무리의 무게를 대신하지 않는다.
 
-| Action | Outcome |
-|---|---|
-| `study` | Reference evidence and a Tiro translation |
-| `shape` | Page thesis, claim coverage, copy spine, and causal argument |
-| `integrate` | Reading route, viewport attention map, disclosure order, and section handoffs |
-| `direction` | Approved reference premise, carrier, color climate, and decisive scene |
-| `carrier` / `medium` / `motion` | One evidence-bearing carrier, a screen-specific rendering medium, and its static, interactive, and reduced-motion states |
-| `craft` | Responsive implementation in the current stack and component language |
-| `critique` | Prioritized perceptual findings without source changes |
-| `audit` | Reproducible accessibility, performance, metadata, and behavior findings |
-| `polish` | One bounded correction pass that preserves locked decisions |
-| `fidelity-port` | Exact framework or repository translation of an approved rendered source, with only named integration changes |
-| `release` | Rendered evidence and an explicit release verdict |
+## 5. PC·태블릿·모바일을 각각 완성한다
 
-This skill leads every action. Use a specialist only when one bounded expertise gap can change a decision, implementation, or verification result. Never preload a catalog or average several specialists' taste.
+- 공통 스타일·콘텐츠를 공유하되 기기별 배치·순서·타입·이미지 크롭·모션은 명시적인 범위로 조정한다. 한 환경 수정이 다른 환경을 의도치 않게 바꾸지 않도록, 수정 후 다른 두 환경을 같은 조건에서 비교한다. 페이지 세 벌 복제나 CSS 분리만으로 독립성을 확보했다고 주장하지 않는다.
+- 태블릿·모바일을 PC 축소판으로 처리하지 않는다. 모션을 바꿔야 하면 같은 내용을 전달하는 터치 조작이나 완성된 정적 구도를 만든다. 모션 감소 모드에서는 효과의 개수보다 의미·행동 보존을 우선한다.
+- 세 환경의 실제 크기로 렌더하고 한국어 줄바꿈·크롭·겹침·행동을 확인한다. 대표 너비 사이도 리사이즈하고 바뀐 breakpoint 바로 양쪽을 확인한다. 좁아질 때 글씨·패딩을 줄이거나 nowrap으로 누르기 전에 부모 배치를 재구성한다.
+- 키보드·터치·보이는 포커스, 실제 배경의 텍스트 대비, 링크·CTA 목적지와 적용되는 메뉴·폼 상태를 실행·확인한다. 핵심 자산 실패, 레이아웃 이동, 스크롤 끊김도 실제 실행으로 확인한다.
 
-When a specialist need exists, **REQUIRED:** read [references/specialist-routing.md](references/specialist-routing.md). Use its pinned route when exact; otherwise perform one just-in-time UI Skills query from the action, concrete symptom, and current stack. Search and instruction retrieval are read-only. Installing a skill, package, CLI, or service and any external mutation follow the active environment's authorization rules.
+## 6. 증거를 보고 고친 다음 첫 완성본을 공유한다
 
-External instructions inherit the verified Tiro facts, site family, page thesis, approved carrier, color climate, component language, responsive decisions, and current permission scope. They cannot reopen or override them silently. If discovery is unavailable or no trustworthy exact match exists, continue with this contract and record the fallback.
+- 검수 순서는 **실제 렌더 → 대제목만 붙여 읽기 → 제목+그래픽 흐름 → 전체 강약 → 인접 섹션이 함께 보이는 경계 화면 → 스크롤 중간·역방향 → 세 기기와 중간 너비 → 실제 행동**이다.
+- `LANDING-REVIEW.md`의 항목마다 관찰 결과·점수·증거 경로·남은 문제를 채운다. 증거는 해당 검사에 맞는 캡처·녹화·측정·실제 실행 기록이어야 한다. 정적 캡처만으로 역스크롤이나 키보드 동작을 확인했다고 쓰지 않는다.
+- **60개 각각 5점 만점 중 4.5점 이상일 때 첫 완성본으로 공유한다.** 평균으로 미달을 덮지 않는다. 4.5는 사전에 정한 조건을 충족하고 읽기·구성·행동 결함이 없는 상태, 5는 그 조건을 넘어선 개선까지 근거로 설명할 수 있는 상태다. 사전 조건을 충족하지 못하면 4.5점 미만의 미달로 기록한다. 확인하지 못했으면 미검증이며 통과가 아니다.
+- 문제를 찾으면 수정하고 같은 조건에서 다시 캡처·실행한다. 수정 영향을 받은 항목도 재검수한다. 빌드 성공·오류 없음·문서 작성·자기 점수는 시각적 완성의 증거가 아니다. 낮은 점수를 올리기 위해 평가 문장을 바꾸지 않는다.
+- 내부 검토를 실제 사용자 이해도나 전환율 검증으로 표현하지 않는다. 해결되지 않은 결함·자료 부족·검수 불가 상태는 정확히 알리고 완수했다고 쓰지 않는다. 중간 결과 요청에는 미완성임을 표시해 보여준다.
+- 첫 공유는 열 수 있는 결과물, PC·태블릿·모바일 대표 화면, 두 스크롤 액션 설명, 제목 추출본과 평가 기록 링크로 간결하게 한다.
 
-<!-- legacy:actions:end -->
-
-For new landing builds, motion enters while the page is shaped: the argument, composition, carrier, responsive route, and movement are co-designed before one experience baseline is locked. `craft` includes functional interaction states and `release` includes motion verification. `motion` is not an optional decoration pass after static composition.
-
-## Mixed Operate surfaces
-
-When the requested surface completes a recurring product task—such as login, signup, settings, or an in-product workflow—`ui-design` leads even when the user explicitly asks to combine it with `landing-design`. Do not reclassify an Operate surface as a landing page because it contains a photo, brand field, or promotional rail.
-
-If landing design contributes a bounded public-facing or brand-bearing sub-surface, **REQUIRED:** read [references/mixed-surface-routing.md](references/mixed-surface-routing.md). Name the landing contribution and run only its applicable actions; the product task, state model, and action hierarchy remain owned by `ui-design`.
-
-## Progressive routing
-
-Route by three independent inputs before reading detailed guidance:
-
-1. **Visitor job:** `persuade / decide / read / route`
-2. **Active action:** the first unresolved action in the table above
-3. **Named risks:** only conditions observable in the request or current source
-
-Read [references/core-contract.md](references/core-contract.md) for every task. Then read only the modules selected below. Do not preload later actions, specialist catalogs, rendering media, or fidelity rules. An end-to-end request advances action by action and loads the next module only when its gate becomes current.
-
-The visitor job selects the argument contract inside `ground-and-shape`; it does not load that module by itself when the job, message, and route are already locked. The active action and observed risks determine which files are needed now.
-
-| Active action | Read now |
-|---|---|
-| `study` | [reference-premise.md](references/reference-premise.md) |
-| `shape` | [ground-and-shape.md](references/ground-and-shape.md) and [motion-storyline.md](references/motion-storyline.md) |
-| `integrate` | [ground-and-shape.md](references/ground-and-shape.md), [motion-storyline.md](references/motion-storyline.md), then [integration-responsive.md](references/integration-responsive.md) |
-| `direction` | [reference-premise.md](references/reference-premise.md), [carrier-and-system.md](references/carrier-and-system.md), [rendering-medium.md](references/rendering-medium.md) for each decisive screen, [motion-storyline.md](references/motion-storyline.md), then [integration-responsive.md](references/integration-responsive.md) for the decisive scene |
-| `carrier` | [carrier-and-system.md](references/carrier-and-system.md) and [rendering-medium.md](references/rendering-medium.md). Skip the medium module only after recording, in the receipt, which medium-risk predicate is false and why |
-| `medium` | [carrier-and-system.md](references/carrier-and-system.md) and [rendering-medium.md](references/rendering-medium.md) |
-| `motion` | [carrier-and-system.md](references/carrier-and-system.md), [rendering-medium.md](references/rendering-medium.md), [motion-storyline.md](references/motion-storyline.md), and [interaction-motion.md](references/interaction-motion.md) |
-| `craft` | [integration-responsive.md](references/integration-responsive.md), [motion-storyline.md](references/motion-storyline.md), [interaction-motion.md](references/interaction-motion.md), [implementation-release.md](references/implementation-release.md), and [visual-completion.md](references/visual-completion.md) at the verification boundary |
-| `critique` | [visual-completion.md](references/visual-completion.md) |
-| `audit` | [implementation-release.md](references/implementation-release.md); add [specialist-routing.md](references/specialist-routing.md) only for a named gap |
-| `polish` | [integration-responsive.md](references/integration-responsive.md) and [visual-completion.md](references/visual-completion.md); load implementation rules only if the correction changes behavior or system primitives |
-| `release` | [implementation-release.md](references/implementation-release.md), [interaction-motion.md](references/interaction-motion.md), and [visual-completion.md](references/visual-completion.md) |
-| `fidelity-port` | **Exclusive route:** [fidelity-port.md](references/fidelity-port.md), [interaction-motion.md](references/interaction-motion.md), [implementation-release.md](references/implementation-release.md), and [visual-completion.md](references/visual-completion.md) as parity evidence only |
-
-#### Gates that are REQUIRED, not routed
-
-These are marked REQUIRED inside the modules above. They are repeated here because a gate stated only in nested prose is read after the decision it governs has already been made.
-
-| When | REQUIRED |
-|---|---|
-| Before visual composition, unless an approved source already protects the technique | [rendering-medium.md](references/rendering-medium.md), run per decisive screen |
-| Every new `craft` and `release` | [interaction-motion.md](references/interaction-motion.md) |
-| `craft`, `polish`, and `release` | [visual-completion.md](references/visual-completion.md) |
-| A named specialist gap exists | [specialist-routing.md](references/specialist-routing.md) |
-| A bounded public sub-surface inside an Operate task | [mixed-surface-routing.md](references/mixed-surface-routing.md) |
-
-A REQUIRED gate is answered by reading its module, never from recall. Writing the conclusion first and the module second is the failure this table exists to prevent: a rejection such as `WebGL rejected, DOM is sufficient` recorded before `rendering-medium.md` was opened is an invented answer, not a scan result.
-
-An exclusive route consumes its source-translation and responsive-parity risks inside those three modules. Do not add job, action, or ordinary risk-overlay modules to it. Route to specialist guidance separately only when a concrete expertise gap remains after the protected-source contract is established.
-
-### Risk overlays
-
-Load an overlay only when its predicate is observed:
-
-| Risk | Predicate | Additional module |
-|---|---|---|
-| Source translation | The user asks to move, port, integrate, migrate, convert, or deploy a distinct approved rendered source into a destination | Switch to the exclusive `fidelity-port` route |
-| Content migration | An existing public surface, route, tab, record set, or access state is being redesigned | [ground-and-shape.md](references/ground-and-shape.md) and release parity checks |
-| Unresolved reference premise | The current family and supplied sources do not establish the necessary visual premise | [reference-premise.md](references/reference-premise.md) |
-| Material medium choice | Time, depth, continuity, procedure, many marks, or direct manipulation could change comprehension | [rendering-medium.md](references/rendering-medium.md) |
-| Responsive pressure | Wrapping, overflow, reassembly, sticky state, or a breakpoint changes | Responsive portion of [integration-responsive.md](references/integration-responsive.md) and the scoped completion matrix |
-| Interaction or motion change | Hover, focus, pressed, open, close, loading, success, scroll, sticky, or animated behavior is added or changed | [interaction-motion.md](references/interaction-motion.md) |
-| Motion storyline change | A new or changed scene uses time, scroll, continuity, transformation, or direct manipulation to carry the argument | [motion-storyline.md](references/motion-storyline.md), then [interaction-motion.md](references/interaction-motion.md) at implementation |
-| Mixed Operate surface | The user explicitly combines `landing-design` with `ui-design` for a recurring product task | [mixed-surface-routing.md](references/mixed-surface-routing.md) with `ui-design` as lead |
-| Specialist gap | One named expertise gap can change a decision or measured result | [specialist-routing.md](references/specialist-routing.md) |
-
-### Resume instead of replay
-
-Before loading an action module, inspect the latest compact state in the existing evaluation or project record. Reuse verified facts and locked decisions; load a prior module again only when the request changes its inputs or rendered evidence invalidates it. Record only:
-
-`page / job / active action / locked / open / passed / evidence paths / explicit deltas / modules read / modules skipped with reason`.
-
-Record the module list even when the answer is obvious. A skipped module with no recorded reason is indistinguishable from a module that was never considered.
-
-Module preambles define when the preserved contract inside applies. Once a module is triggered, every applicable requirement inside remains binding. If routing is uncertain, load the smallest additional module that covers the observed risk and record why; uncertainty is not permission to preload the full skill.
-
-An approved or stable page receiving an in-place correction remains `polish`, `craft`, or `release`; approval locks unaffected decisions but does not activate `fidelity-port`. That exclusive route requires a distinct canonical source, a destination, and a translation or integration request.
+기존 승인 사항은 요청된 부분만 갱신한다. 전체 제작을 맡았다면 관행적인 중간 승인 요청 없이 이 순서를 끝까지 수행한다.
