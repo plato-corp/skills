@@ -1,40 +1,189 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "routes": {
+    "solid-field": {
+      "description": "A plain authorized brand-color field is a complete valid asset. No imagegen, no reference attachment.",
+      "requires_reference": false,
+      "valid_families": [
+        "solid-brand-field"
+      ]
+    },
+    "brand-graphic": {
+      "description": "Ambient or brand-material graphic that supports mood or identity. Needs no fictional evidence and no causal transition.",
+      "requires_reference": true,
+      "valid_families": [
+        "ambient-atmosphere",
+        "brand-material-structure"
+      ]
+    },
+    "product-proof": {
+      "description": "A verified product fragment or real human moment is the primary evidence.",
+      "requires_reference": true,
+      "valid_families": [
+        "product-proof-field",
+        "conversation-moment",
+        "record-compression"
+      ]
+    }
+  },
   "families": [
     {
+      "id": "solid-brand-field",
+      "routes": [
+        "solid-field"
+      ],
+      "select_when": "The current authorized brand guide permits a plain brand-color field and the channel composition can carry the message with exact logo, title typography, and whitespace.",
+      "requires_evidence": false,
+      "requires_causal_transition": false,
+      "focal_events": [
+        "a single brand-color plane",
+        "one restrained flat brand plane with reserved copy zone"
+      ],
+      "release_devices": [
+        "open whitespace",
+        "reserved logo zone",
+        "reserved copy zone"
+      ],
+      "must_not": [
+        "added texture to pass a genericity test",
+        "invented evidence",
+        "decorative geometry with no role"
+      ]
+    },
+    {
+      "id": "ambient-atmosphere",
+      "routes": [
+        "brand-graphic"
+      ],
+      "select_when": "A restrained atmospheric field supports a section's mood or identity without asserting a product fact.",
+      "requires_evidence": false,
+      "requires_causal_transition": false,
+      "focal_events": [
+        "a dominant composition using the current approved graphic grammar"
+      ],
+      "release_devices": [
+        "broad quiet field",
+        "single open edge",
+        "low-detail margin"
+      ],
+      "must_not": [
+        "fictional evidence",
+        "invented causal transition",
+        "fake UI or metrics",
+        "historical material-depth treatment that conflicts with the current authorized flat/other style"
+      ]
+    },
+    {
+      "id": "brand-material-structure",
+      "routes": [
+        "brand-graphic"
+      ],
+      "select_when": "Capture, continuity, or Tiro's record origin is central and no external product proof should lead.",
+      "requires_evidence": false,
+      "requires_causal_transition": false,
+      "focal_events": [
+        "one compressed material convergence",
+        "base form modified into a second state",
+        "one exact vector nib introduced by the channel composition"
+      ],
+      "release_devices": [
+        "open field",
+        "reserved copy zone"
+      ],
+      "must_not": [
+        "generated logo imitation",
+        "generic quill",
+        "Roman prop",
+        "decorative orange trace",
+        "historical material-depth treatment that conflicts with the current authorized flat/other style"
+      ]
+    },
+    {
       "id": "product-proof-field",
+      "routes": [
+        "product-proof"
+      ],
       "select_when": "A verified product fragment is the primary evidence.",
-      "focal_events": ["decisive product crop", "proof revealed through one material boundary", "one product state connected to its consequence"],
-      "release_devices": ["quiet canvas", "low-detail material field", "open product-adjacent margin"],
-      "must_not": ["invented UI", "sanitized generic dashboard", "multiple equal screenshots"]
+      "requires_evidence": true,
+      "requires_causal_transition": true,
+      "focal_events": [
+        "decisive product crop",
+        "proof revealed through one material boundary",
+        "one product state connected to its consequence"
+      ],
+      "release_devices": [
+        "quiet canvas",
+        "low-detail material field",
+        "open product-adjacent margin"
+      ],
+      "must_not": [
+        "invented UI",
+        "sanitized generic dashboard",
+        "multiple equal screenshots"
+      ]
     },
     {
       "id": "conversation-moment",
+      "routes": [
+        "product-proof"
+      ],
       "select_when": "A real or generated human conversation is the primary emotional evidence.",
-      "focal_events": ["shared gesture", "in-between movement", "one visible moment of mutual attention"],
-      "release_devices": ["soft architectural field", "partial figure crop", "quiet daylight area"],
-      "must_not": ["boardroom staging", "camera-facing team portrait", "single-ethnicity casting by default", "college-campus styling"]
-    },
-    {
-      "id": "nib-derived-structure",
-      "select_when": "Capture, continuity, or Tiro's record origin is central and no stronger external proof should lead.",
-      "focal_events": ["one compressed material convergence", "base form modified into a second state", "one exact vector nib introduced by the channel composition"],
-      "release_devices": ["unmarked warm field", "soft relief fade", "open copy zone"],
-      "must_not": ["generated logo imitation", "generic quill", "Roman prop", "decorative orange trace"]
+      "requires_evidence": true,
+      "requires_causal_transition": true,
+      "focal_events": [
+        "shared gesture",
+        "in-between movement",
+        "one visible moment of mutual attention"
+      ],
+      "release_devices": [
+        "soft architectural field",
+        "partial figure crop",
+        "quiet daylight area"
+      ],
+      "must_not": [
+        "boardroom staging",
+        "camera-facing team portrait",
+        "single-ethnicity casting by default",
+        "college-campus styling"
+      ]
     },
     {
       "id": "record-compression",
+      "routes": [
+        "product-proof"
+      ],
       "select_when": "The message is about transient speech or fragments becoming a durable reusable record.",
-      "focal_events": ["many soft fragments resolving into one surface", "one fold that reveals structure", "one material seam joining contexts"],
-      "release_devices": ["broad quiet paper", "low-contrast fragment field", "single empty edge"],
-      "must_not": ["node diagram", "fake handwriting", "equal floating cards", "arbitrary connection line"]
+      "requires_evidence": true,
+      "requires_causal_transition": true,
+      "focal_events": [
+        "many soft fragments resolving into one surface",
+        "one fold that reveals structure",
+        "one material seam joining contexts"
+      ],
+      "release_devices": [
+        "broad quiet paper",
+        "low-contrast fragment field",
+        "single empty edge"
+      ],
+      "must_not": [
+        "node diagram",
+        "fake handwriting",
+        "equal floating cards",
+        "arbitrary connection line"
+      ]
     }
   ],
   "global_contract": {
-    "focal_event_count": 1,
-    "release_zone_count": 1,
     "generated_text_count": 0,
     "generated_logo_count": 0,
-    "critical_score_floor": 9.0
+    "review_dispositions": [
+      "pass",
+      "fix",
+      "unverified"
+    ],
+    "release_blocking_dispositions": [
+      "fix",
+      "unverified"
+    ]
   }
 }
