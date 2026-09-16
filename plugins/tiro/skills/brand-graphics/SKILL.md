@@ -34,7 +34,13 @@ Must avoid: <artifact-specific failures>
 
 If called directly, derive these fields from the request. Ask only when a missing fact would materially change the subject or evidence.
 
-## Workflow
+## Solid-field path
+
+Before selecting a recipe, check whether the current authorized brand guide permits a plain brand-color field. When it does, that field is a complete valid asset; the channel composition can rely on exact logo, title typography, and whitespace. Do not add texture, geometry, halftone, connectors, or invented evidence just to fill the frame or pass a genericity test.
+
+For this path, implement the field directly in CSS or vector using the governing background/foreground contract. Image generation and reference-image attachment are unnecessary. Record purpose, source, palette roles, protected content zone, and target crop in the handoff; mark imagery-only fields (evidence family, material event, generation seed) as not applicable with a reason. Skip the imagery workflow below. Judge the final channel composition by hierarchy, contrast, correct brand assets/type, whitespace, and crop fitness; absence of decorative objects is not a failure. Final typography remains the channel composer's responsibility.
+
+## Workflow — when imagery is needed
 
 1. Read [recipe-contract.md](references/recipe-contract.md) and resolve every manifest field before making imagery.
 2. Select one evidence family from [recipes.json](design-system/recipes.json). The family follows the evidence; it is not a style menu.
