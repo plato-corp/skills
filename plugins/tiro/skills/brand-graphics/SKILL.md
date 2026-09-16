@@ -34,6 +34,8 @@ Must avoid: <artifact-specific failures>
 
 If called directly, derive these fields from the request. Ask only when a missing fact would materially change the subject or evidence.
 
+Latest explicit decisions in the authorized guide override conflicting traits visible in older reference images. Before generation, resolve palette direction, flat versus dimensional treatment, and permitted form variation from that guide. Do not turn a reference image or recipe into a closed shape vocabulary. Keep historical examples separate from current production requirements.
+
 ## Solid-field path
 
 Before selecting a recipe, check whether the current authorized brand guide permits a plain brand-color field. When it does, that field is a complete valid asset; the channel composition can rely on exact logo, title typography, and whitespace. Do not add texture, geometry, halftone, connectors, or invented evidence just to fill the frame or pass a genericity test.
