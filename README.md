@@ -61,3 +61,25 @@ We're a small team in Seoul building [Tiro](https://tiro.ooo?utm_source=github&u
 ---
 
 [![Tiro — Perfectly crafted meeting notes](assets/hero.jpg)](https://tiro.ax?utm_source=github&utm_medium=referral&utm_campaign=skills_readme)
+
+## Design workflows (0.7.0)
+
+| Skill | Purpose |
+| --- | --- |
+| [tiro:ui-design](plugins/tiro/skills/ui-design/SKILL.md) | Tiro product UI diagnosis, implementation, and rendered review |
+| [tiro:landing-design](plugins/tiro/skills/landing-design/SKILL.md) | Tiro public-page strategy, composition, implementation, and release |
+| [tiro:brand-graphics](plugins/tiro/skills/brand-graphics/SKILL.md) | Reusable graphic assets using the current approved visual language |
+| [tiro:landing-page-studio](plugins/tiro/skills/landing-page-studio/SKILL.md) | General landing workflow; Tiro contracts apply only to Tiro projects |
+
+These skills read current design/ontology contracts when the task involves Tiro color, logos, title typography, or graphics. Exact values and reference images stay in their source repositories; Tiro-specific use requires access to those repositories. An inaccessible source is reported rather than reconstructed from memory.
+
+Title optical calibration applies wherever Tiro title fonts are used. Approved reference images may be supplied to image-generation tools for matching graphic production within the task's authorized scope. Generated assets still require inspection; publication permissions are separate.
+
+Update an existing Claude Code installation with:
+
+```sh
+claude plugin marketplace update plato-skills
+claude plugin update tiro@plato-skills
+```
+
+Restart the client after updating to load the new instructions.
