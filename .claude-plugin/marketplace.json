@@ -9,9 +9,9 @@
   "plugins": [
     {
       "name": "tiro",
-      "description": "The LLM Wiki suite and learning workflows from the Tiro team: bootstrap a personal LLM-maintained wiki, ingest sources, query it, keep it healthy, learn Socratically, and (optionally) keep it in sync with your Tiro notes.",
+      "description": "Tiro LLM Wiki and design workflows: product UI, landing pages, brand graphics, and Landing Page Studio with current design-contract lookup.",
       "source": "./plugins/tiro",
-      "version": "0.1.0",
+      "version": "0.7.0",
       "author": {
         "name": "ThePlato",
         "email": "dev@theplato.io"
@@ -26,7 +26,12 @@
         "tiro",
         "notes",
         "meetings",
-        "karpathy"
+        "karpathy",
+        "ui-design",
+        "landing-design",
+        "brand-graphics",
+        "landing-page-studio",
+        "design-system"
       ]
     }
   ]

@@ -1,7 +1,7 @@
 {
   "name": "tiro",
-  "version": "0.1.0",
-  "description": "LLM Wiki suite from the Tiro team — bootstrap, ingest, query, lint, socratic, sync. A persistent, agent-maintained personal knowledge base.",
+  "version": "0.7.0",
+  "description": "Tiro LLM Wiki and design workflows: product UI, landing pages, brand graphics, and Landing Page Studio with current design-contract lookup.",
   "author": {
     "name": "ThePlato",
     "email": "dev@theplato.io"
@@ -14,6 +14,11 @@
     "second-brain",
     "socratic",
     "tiro",
-    "karpathy"
+    "karpathy",
+    "ui-design",
+    "landing-design",
+    "brand-graphics",
+    "landing-page-studio",
+    "design-system"
   ]
 }
