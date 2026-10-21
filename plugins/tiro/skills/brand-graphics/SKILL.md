@@ -13,6 +13,8 @@ When product UI appears, use a newly verified capture of the latest production s
 
 Consult the current authorized design-system contract, but preserve actual production pixels if they disagree: record the mismatch instead of recoloring or rebuilding the capture to match tokens. Keep brand graphics outside the product layer.
 
+When a live production surface could expose user-identifying or customer content, capture a relevant privacy-safe fragment rather than editing text or the DOM to hide identity. A faithful crop of a safe region preserves product truth; blanking or rewriting pixels does not. Keep the original captured fragment read-only and disclose its crop; avoid collecting or retaining a sensitive full-screen capture when a safe fragment is sufficient.
+
 ## Intake — ask once before producing
 
 Before producing anything, confirm the few facts that change the subject, evidence, or format. Ask them **once, grouped and concise** — not as a full checklist, and never re-ask anything the request already supplied. Present the choices you actually observed in the request; do not invent options. Group the ask into:
@@ -65,3 +67,5 @@ Run `node references/waveform-medium-60-horizontal/identity.test.cjs` for determ
 Inspect light/dark output, full size and thumbnail, legibility, line density, and motion. Before public distribution verify the package contains no product/customer data, credentials, private links, or external runtime requests. Match source hashes in the provenance.
 
 Authorized teams may consult their current ontology/design contracts for newer approved decisions. Do not expose private contract contents or require private access to use this public standalone reference.
+
+For compact chat assets, inspect both the final full-size PNG and a 320px-wide chat preview. Fix clipped or shifted exports caused by artwork overflowing a fixed artboard. Use explicit semantic line breaks in Korean headlines when needed; prevent a final syllable or short ending from becoming an orphan line. Check rendered headline/subtitle bounds against the product fragment, and use the exact navigation labels observed in production for any setup instructions.
