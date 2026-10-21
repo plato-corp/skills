@@ -54,6 +54,10 @@ The reference contains a pen-nib shape expressed as numeric carrier geometry. It
 
 For motion-capable surfaces, preserve the reference's slow drift; provide pause and a deterministic static frame for reduced motion. Suspend animation when hidden. Static exports should use a readable stable frame. Motion is decorative, not recording status or measured audio.
 
+## Context-object waveform generation
+
+For conversation, recording, and organization objects rendered with the original HTML waveform treatment, use [the context-object workflow](references/waveform-context-workflow.md). It covers meaningful object selection, 3D source prompts, native-renderer preservation, new input data, and full-size/thumbnail review. [Open the four-object animated reference](references/waveform-context-20261021/review.html) or [compare the contact sheet](references/waveform-context-20261021/contactsheet/contact-2x2-dark.png). This is a liked generation direction and review reference, not global brand adoption or production evidence. The bundled fields replay these four objects; new source conversion requires the separately documented build tools.
+
 ## Selecting the image before waveform conversion
 
 Choose a subject whose silhouette and broad light/shadow masses remain recognizable at the intended output size and 60-line density. A clear isolated object with readable volume works better than flat texture or fine detail. Prefer uncluttered backgrounds and enough quiet space around text. Avoid lettering, UI, intricate grids, and dominant transparent reflections in the source. Verify grayscale, small-size, and stepped-tone previews before accepting it. Use authorized source assets and retain their provenance.

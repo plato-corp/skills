@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiro 파형 리뷰 · 맥락 사물 4종 (원본 SteppedWave, 스킬 패키지 사본)</title>
+<!--
+  자체 포함 리뷰 HTML. 네이티브 렌더러(renderer/stepped-wave.js, wave-horizontal.js,
+  wave-density.js)와 입력 필드 데이터(renderer/horizontal-fields.js)를 그대로 사용합니다.
+  Python 근사 렌더러·blur·stretch·gamma 재작성 없이 원본 HTML 파형 렌더링과 동일합니다.
+  '원본 비교'는 포터블 패키지를 위해 축소한 480px 썸네일(sources-thumb/)을 겹칩니다.
+  전체 해상도 소스/출력 PNG·SVG, 전체 QA는 작업 폴더(manifest.json 참조)에 있습니다.
+-->
+<style>
+  :root{
+    --fg-primary-muted:#827061; --bg-base:#FAFAF9; --fg-base:#1C1917; --bd:#E7E5E4;
+    --auth-wave-color:#827970; --auth-wave-opacity:.273;
+  }
+  :root[data-theme=dark]{
+    --fg-primary-muted:#CAC0B6; --bg-base:#191614; --fg-base:#F5F3F0; --bd:#2B2623;
+    --auth-wave-color:#CAC0B6; --auth-wave-opacity:.299;   /* dark stepped cascade (review preset) */
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg-base);color:var(--fg-base);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Pretendard",system-ui,sans-serif}
+  header{display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:20px 24px;border-bottom:1px solid var(--bd);position:sticky;top:0;
+    background:var(--bg-base);z-index:5}
+  header h1{font-size:18px;font-weight:650;margin:0}
+  header p{margin:2px 0 0;color:var(--fg-primary-muted);font-size:13px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap}
+  button{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--bd);
+    background:transparent;color:var(--fg-base);border-radius:10px;padding:8px 14px;cursor:pointer;min-height:40px}
+  button[aria-pressed=true]{background:var(--fg-base);color:var(--bg-base);border-color:var(--fg-base)}
+  main{display:grid;grid-template-columns:repeat(2,minmax(300px,1fr));gap:18px;
+    padding:24px;max-width:960px;margin:0 auto}
+  @media (max-width:680px){ main{grid-template-columns:1fr} }
+  figure{margin:0;border:1px solid var(--bd);border-radius:16px;overflow:hidden;background:var(--bg-base)}
+  .frame{position:relative;width:100%;aspect-ratio:390/380;overflow:hidden;background:var(--bg-base)}
+  .auth-wave{position:absolute;inset:0;pointer-events:none;color:var(--auth-wave-color);opacity:var(--auth-wave-opacity)}
+  .auth-wave svg{width:100%;height:100%;display:block}
+  .auth-wave-material{display:none}
+  .source{position:absolute;inset:0;background:#000 center/contain no-repeat;opacity:0;
+    transition:opacity .2s ease;pointer-events:none}
+  figure[data-compare=true] .source{opacity:1}
+  figure[data-compare=true] .auth-wave{opacity:.14}
+  figcaption{display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+    padding:12px 16px;border-top:1px solid var(--bd)}
+  figcaption b{font-weight:600}
+  figcaption .meta{color:var(--fg-primary-muted);font-size:12px;font-variant-numeric:tabular-nums}
+  figcaption button{min-height:0;padding:4px 10px;font-size:12px;border-radius:8px}
+  .note{max-width:960px;margin:0 auto;padding:0 24px 32px;color:var(--fg-primary-muted);font-size:12px}
+  @media (prefers-reduced-motion:reduce){ button#motion{opacity:.6} }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Tiro 파형 리뷰 — 맥락 사물 4종</h1>
+    <p>원본 가로 파형 렌더러(stepped-medium · 60 캐리어 · 가로 · 종이-잉크 마스크 · 연속 느린 흐름)를 4개 맥락 사물에 그대로 적용. 스킬 패키지 사본.</p>
+  </div>
+  <div class="controls">
+    <button id="theme" aria-pressed="true">라이트 모드</button>
+    <button id="motion" aria-pressed="true">모션 일시정지</button>
+  </div>
+</header>
+
+<main id="grid"></main>
+<p class="note">
+  렌더러 코드(stepped-wave.js / wave-horizontal.js / wave-density.js)와 입력 필드 데이터(horizontal-fields.js)는 원본 그대로입니다 — Python 근사·blur·stretch·gamma 재작성 없음.
+  각 사물은 새 알고리즘 없이 기존 네이티브 클래스를 재사용합니다 — 두 의자→meeting(0), 겹친 메모지→conversation(1), 수첩과 펜→notebook(3), 테이블 마이크→globe(5).
+  <b>원본 비교</b> 버튼은 포터블 패키지용 480px 축소 썸네일을 겹칩니다. 전체 해상도 소스/출력/QA는 작업 폴더(manifest.json)에 있습니다.
+  색은 이 리뷰의 다크 프리셋(fg #CAC0B6 · opacity .299 · bg #191614)이며 채택된 전역 토큰이 아닙니다.
+</p>
+
+<script src="renderer/wave-density.js"></script>
+<script src="renderer/wave-horizontal.js"></script>
+<script src="renderer/stepped-wave.js"></script>
+<script src="renderer/horizontal-fields.js"></script>
+<script>
+(function(){
+  const PRESETS=[
+    ['two-chairs','두 의자','meeting(0)','sources-thumb/two-chairs.png'],
+    ['stacked-notes','겹친 메모지','conversation(1)','sources-thumb/stacked-notes.png'],
+    ['notebook-pen','수첩과 펜','notebook(3)','sources-thumb/notebook-pen.png'],
+    ['table-mic','테이블 마이크','globe(5)','sources-thumb/table-mic.png'],
+  ];
+  const NS='http://www.w3.org/2000/svg';
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+  const grid=document.getElementById('grid');
+  const cards=[];
+
+  for(const [key,name,native,src] of PRESETS){
+    const fig=document.createElement('figure');
+    const frame=document.createElement('div'); frame.className='frame';
+    const host=document.createElement('div'); host.className='auth-wave'; host.setAttribute('aria-hidden','true');
+    const svg=document.createElementNS(NS,'svg');
+    svg.setAttribute('viewBox','0 0 390 380'); svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+    const matG=document.createElementNS(NS,'g'); matG.setAttribute('class','auth-wave-material');
+    const sigG=document.createElementNS(NS,'g'); sigG.setAttribute('class','auth-wave-signal');
+    for(let i=0;i<60;i++){const p=document.createElementNS(NS,'path');p.setAttribute('d','M12 190H378');sigG.appendChild(p);}
+    svg.appendChild(matG); svg.appendChild(sigG); host.appendChild(svg);
+    const source=document.createElement('div'); source.className='source';
+    source.style.backgroundImage='url("'+src+'")';
+    frame.appendChild(host); frame.appendChild(source);
+    const cap=document.createElement('figcaption');
+    const left=document.createElement('div');
+    const b=document.createElement('b'); b.textContent=name;
+    const m=document.createElement('div'); m.className='meta'; m.textContent=key+' · '+native+' · 60선';
+    left.appendChild(b); left.appendChild(m);
+    const cmp=document.createElement('button'); cmp.type='button';
+    cmp.setAttribute('aria-pressed','false'); cmp.textContent='원본 비교';
+    cmp.addEventListener('click',()=>{
+      const on=fig.dataset.compare!=='true';
+      fig.dataset.compare=String(on);
+      cmp.setAttribute('aria-pressed',String(on));
+    });
+    cap.appendChild(left); cap.appendChild(cmp);
+    fig.appendChild(frame); fig.appendChild(cap); grid.appendChild(fig);
+    const rows=window.HorizontalWave([],60,1,key);
+    cards.push({key,svg,paths:[...sigG.querySelectorAll('path')],rows});
+  }
+
+  let moving=true, elapsed=0, last=null, raf=0;
+  function draw(t){
+    for(const c of cards){
+      window.SteppedWave.render(c.svg,c.paths,c.rows,t,true,true,moving&&!reduced.matches,null);
+    }
+  }
+  function tick(now){
+    if(document.hidden || !moving || reduced.matches){ last=null; draw(elapsed); return; }
+    if(last!==null){ elapsed += (now-last)/1000 * 0.5; } // slow flow: half speed
+    last=now;
+    draw(elapsed);
+    raf=requestAnimationFrame(tick);
+  }
+  function resume(){ cancelAnimationFrame(raf); last=null; if(moving && !reduced.matches && !document.hidden){ raf=requestAnimationFrame(tick);} else { draw(elapsed);} }
+
+  document.getElementById('theme').addEventListener('click', e=>{
+    const dark=document.documentElement.dataset.theme!=='dark';
+    document.documentElement.dataset.theme=dark?'dark':'light';
+    e.currentTarget.setAttribute('aria-pressed',String(dark));
+    e.currentTarget.textContent=dark?'라이트 모드':'다크 모드';
+    resume();
+  });
+  document.getElementById('motion').addEventListener('click', e=>{
+    moving=!moving;
+    e.currentTarget.setAttribute('aria-pressed',String(moving));
+    e.currentTarget.textContent=moving?'모션 일시정지':'모션 재생';
+    resume();
+  });
+  document.addEventListener('visibilitychange',resume);
+  reduced.addEventListener('change',resume);
+  resume();
+})();
+</script>
+</body>
+</html>

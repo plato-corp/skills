@@ -1,0 +1,83 @@
+{
+  "packaged_at": "2026-10-21T21:50:00+09:00",
+  "title": "Tiro 파형 — 맥락 사물 4종 리뷰 (원본 SteppedWave, 그래픽 전용 사본)",
+  "status": "review_reference_not_adopted",
+  "what_this_is": "A compact graphics-only review reference. It is a candidate generation direction the user liked (2026-10-21), NOT a globally adopted/canonical waveform treatment and NOT product-UI evidence.",
+  "route_summary": {
+    "object_selection": "Semantically related Tiro conversation/record/organize objects were chosen, not objects picked only for visual shape (shell/stone/coil were visual-only candidates and are superseded for this route).",
+    "render_direction": "stepped-medium, 60 carriers, horizontal axis, continuous slow flow, paper-ink mask.",
+    "color": "Dark review preset only: fg #CAC0B6, opacity 0.299, bg #191614. From the source snapshot. NOT adopted global tokens.",
+    "pipeline_honesty": "imagegen was used ONLY to produce the 3D source photos. There is NO fake hand-drawn waveform. The waveform is the exact original native HTML rendering. No Python approximate renderer, blur, stretch, or gamma rewrite was used for the waveform."
+  },
+  "provenance": {
+    "work_source": "work/waveform-context-objects-20261021 (local working folder)",
+    "lineage_note": "Native waveform renderers are byte-identical copies from the working build (build/original/*). The per-object input field data (horizontal-fields.js), native class mapping, grid placement, and layout are NEW inputs documented below; they do not claim to have existed in the original source.",
+    "new_inputs_documented": {
+      "native_class_mapping": {
+        "two-chairs": "meeting (densityIndex 0)",
+        "stacked-notes": "conversation (densityIndex 1)",
+        "notebook-pen": "notebook (densityIndex 3)",
+        "table-mic": "globe (densityIndex 5)"
+      },
+      "note": "Mapping/grids/placement are documented new DATA permitted for this object set; the native style/algorithm is unchanged."
+    }
+  },
+  "renderer_bytes_preserved": {
+    "note": "Native renderer bytes preserved. stepped-wave.js must match the required SHA below.",
+    "required_stepped_wave_sha256": "c3931500251c72857fb51d05000c97591787fe91099d12890b735a29dafec529",
+    "files": {
+      "renderer/stepped-wave.js": "c3931500251c72857fb51d05000c97591787fe91099d12890b735a29dafec529",
+      "renderer/wave-horizontal.js": "dc91470a035a7a3b04c0799661e69a98c00637c895267c37144c0831240de61b",
+      "renderer/wave-density.js": "ea407359e60defaae0a8c2d89ca0143b06448ef3d48a9c4e50123796ca89acdf"
+    }
+  },
+  "support_files": {
+    "renderer/horizontal-fields.js": {
+      "sha256": "44b8ac8439e2faeee4b2e66471d90a6fcc3c73613c336fbd71a025c95f31ea9f",
+      "role": "Per-object input field data (base64 grids) needed to make the review HTML render without the full product build. New DATA input, not original source."
+    },
+    "review.html": {
+      "sha256": "85c9fb4fe55517973f6a5fbfd20d1ad9d06e97f0f92c46dd957b8f46852f6bec",
+      "role": "Self-contained animated review derived from the latest work index.html, repointed to the local renderer/ copies and sources-thumb/. Uses the exact native rendering."
+    },
+    "contactsheet/contact-2x2-dark.png": {
+      "sha256": "28b6d49023a569050219068f2a29a12f90228f06fd5994633fbb6b2ae5a464e2",
+      "role": "2x2 dark contact sheet, 780x840, Korean labels."
+    }
+  },
+  "source_thumbnails": {
+    "note": "480px downscaled copies for a portable in-browser original-compare. Full-resolution sources live in the working folder; their SHAs are recorded below for provenance.",
+    "files": {
+      "sources-thumb/two-chairs.png": "aaff610f536e7e6f5b577fff46d3fb9b39706ea6283a99f9f472199f9df868d1",
+      "sources-thumb/stacked-notes.png": "8b6ca7194953142df56aca727bba4ccb9b249a13c8c729c62bac8ef99ea8fa55",
+      "sources-thumb/notebook-pen.png": "402667f6ebb5a8d194711253a1b0c4646e30f19912ff1b76067c68db216c1a42",
+      "sources-thumb/table-mic.png": "f2e67cdbdcf160ad2258e7ee69fe61b444d3baf8b99ab60e08554e99b202972d"
+    },
+    "full_resolution_source_sha256": {
+      "two-chairs.png": "459a42a278b9b9073a71388a961832b669780019db04906328e458bc71a43827",
+      "stacked-notes.png": "3328c7b2d334166e0866c669b54161537ef63400484be1cd7522fb51cecedaba",
+      "notebook-pen.png": "13c65afa8f6b83589352224b2626b08ad8f8dd43b3feac39dd192d67242c90c5",
+      "table-mic.png": "d77db3206cdd9694cbcc1bfe1368cee646f9f20df02ff766877136cee4e3ef8c"
+    }
+  },
+  "portable_vs_local": {
+    "portable_in_this_package": [
+      "Native renderers (stepped-wave.js / wave-horizontal.js / wave-density.js)",
+      "Input field data (horizontal-fields.js)",
+      "Self-contained review.html (opens directly in a browser, animated)",
+      "2x2 dark contact sheet",
+      "480px source thumbnails for original-compare"
+    ],
+    "local_only_not_packaged": [
+      "Full-resolution source PNGs (~1.3MB each) and full-size 1080/320 output PNGs + SVGs",
+      "Full QA set (render-report, final-export-check, equality, hash-receipt)",
+      "Build adapter/export scripts and whole product/UI simulation",
+      "Reason: keep the reference compact and avoid shipping a product simulation or customer data. The review HTML plus the renderer snapshot and this documented pipeline are enough to review the direction; regenerate full outputs from the working folder if needed."
+    ]
+  },
+  "review_examples_preferred": ["two-chairs", "stacked-notes", "notebook-pen", "table-mic"],
+  "known_review_notes": {
+    "readability": "Objects should read yet blend into the waveform; labels alone cannot rescue an unreadable crop. Apply the skill crop recognizability gate at full size and 320px.",
+    "notebook-pen": "Weak identifiability was noted as an improvement item, not a universal PASS."
+  }
+}
