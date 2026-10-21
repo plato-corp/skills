@@ -1,0 +1,42 @@
+---
+name: brand-graphics
+description: Create or reuse Tiro brand graphics and product-evidence compositions. Includes a standalone stepped-waveform reference; use for reusable marketing assets, not product UI implementation or whole landing pages.
+---
+
+# Tiro Brand Graphics
+
+Keep product evidence, brand graphics, and channel composition separate. Use exact product captures and logos; never ask a generated image to redraw them. Compose final copy and channel layouts as separate editable layers.
+
+## Product evidence
+
+When product UI appears, use a newly verified capture of the latest production surface. Record its URL, capture time/timezone, platform, theme, available build/deploy identifier, and the design-system ref consulted. Check for relevant UI changes before reusing older captures; mark freshness unverified when production cannot be checked. A prototype or old HTML is not current-production evidence.
+
+Consult the current authorized design-system contract, but preserve actual production pixels if they disagree: record the mismatch instead of recoloring or rebuilding the capture to match tokens. Keep brand graphics outside the product layer.
+
+## Brand direction and reference
+
+No geometric or pattern background is mandatory. A plain authorized brand-color field is valid when the message and hierarchy are sufficient. Preserve older assets as optional references.
+
+The current waveform working reference is **60 horizontal lines, medium weight, slow flow**. This is a review baseline for the requested treatment, not a universal background default, final brand approval, or evidence of production adoption. Thin and thick profiles remain comparison alternatives.
+
+- [Open the graphic-only reference](references/waveform-medium-60-horizontal/index.html).
+- [Usage and settings](references/waveform-medium-60-horizontal/README.md).
+- [Source and extraction provenance](references/waveform-medium-60-horizontal/provenance.json).
+
+The reference contains a pen-nib shape expressed as numeric carrier geometry. It excludes the product simulation, authentication/onboarding UI, logos, fonts, customer content, and internal URLs. It is a brand graphic and does not prove product behavior. Exact weights, density, and slow-flow values for this review snapshot are recorded in its provenance; do not invent a separate preset.
+
+For motion-capable surfaces, preserve the reference's slow drift; provide pause and a deterministic static frame for reduced motion. Suspend animation when hidden. Static exports should use a readable stable frame. Motion is decorative, not recording status or measured audio.
+
+## Selecting the image before waveform conversion
+
+Choose a subject whose silhouette and broad light/shadow masses remain recognizable at the intended output size and 60-line density. A clear isolated object with readable volume works better than flat texture or fine detail. Prefer uncluttered backgrounds and enough quiet space around text. Avoid lettering, UI, intricate grids, and dominant transparent reflections in the source. Verify grayscale, small-size, and stepped-tone previews before accepting it. Use authorized source assets and retain their provenance.
+
+The supplied carrier set covers one object only. It does not implement arbitrary image conversion; source sampling needs its own verification when a new object is introduced.
+
+## Validation
+
+Run `node references/waveform-medium-60-horizontal/identity.test.cjs` for deterministic static output, active flow, profiles, and carrier count. An optional local source argument compares extracted geometry results against the original review implementation. This does not establish production adoption or independently prove the carrier preprocessing is identical.
+
+Inspect light/dark output, full size and thumbnail, legibility, line density, and motion. Before public distribution verify the package contains no product/customer data, credentials, private links, or external runtime requests. Match source hashes in the provenance.
+
+Authorized teams may consult their current ontology/design contracts for newer approved decisions. Do not expose private contract contents or require private access to use this public standalone reference.

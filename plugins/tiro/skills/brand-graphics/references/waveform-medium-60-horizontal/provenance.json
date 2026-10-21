@@ -1,0 +1,104 @@
+{
+  "artifact": "tiro brand graphic — stepped waveform (medium, 60 carriers, horizontal, slow flow)",
+  "created": "2026-10-21",
+  "scope": "Reusable brand graphic; not product evidence. Geometry only; no product UI, no raster field.",
+  "status": "current-working-reference",
+  "notAClaim": [
+    "not a universal default",
+    "not production-adopted",
+    "thin and thick profiles are comparison alternatives only"
+  ],
+  "config": {
+    "profile": "medium",
+    "profiles": {
+      "medium": { "widths": [0.05, 0.1425, 0.265, 0.41, 0.59], "cuts": [0.325, 0.6, 0.825] },
+      "thin": { "widths": [0.045, 0.105, 0.19, 0.3, 0.44], "cuts": [0.4, 0.7, 0.9] },
+      "thick": { "widths": [0.055, 0.18, 0.34, 0.52, 0.74], "cuts": [0.25, 0.5, 0.75] }
+    },
+    "carriers": 60,
+    "axis": "horizontal",
+    "stage": [390, 380],
+    "verticesPerRow": 112,
+    "cell": 6,
+    "slowFlow": {
+      "driftPxPerSecond": 3,
+      "note": "field drift = (elapsedSeconds * 3) % cell; continuous, sweep=null",
+      "drawThrottleMs": 32,
+      "carrierHairlineOpacity": "0.28 * sin(pi*(i+0.5)/n)^0.65",
+      "carrierHairlineStrokeWidth": 0.38
+    },
+    "layerOpacity": {
+      "steppedLight": 0.273,
+      "steppedDark": 0.299,
+      "note": "from auth-flow.css .auth-wave[data-graphic^=stepped]; preview uses these values"
+    },
+    "reducedMotion": "static (moving=false); field frozen, deterministic",
+    "offscreen": "animation stops on document.hidden and pagehide"
+  },
+  "geometry": {
+    "file": "stepped-wave-geometry.js",
+    "extractedFrom": "stepped-wave.js",
+    "extractedFunctions": ["clamp", "section", "at", "geometry", "profiles"],
+    "omittedFromSource": [
+      "embedded paper-ink base64 PNG texture",
+      "SVG DOM render() path",
+      "WeakMap layer/snapshot bookkeeping"
+    ],
+    "identityTest": "identity.test.cjs — 13 comparisons match the source byte-for-byte (flow, static, one-shot sweep, medium + thin + thick)"
+  },
+  "sources": [
+    {
+      "role": "geometry authority (extracted verbatim)",
+      "file": "stepped-wave.js",
+      "sha256": "c3931500251c72857fb51d05000c97591787fe91099d12890b735a29dafec529"
+    },
+    {
+      "role": "horizontal sampling method reproduced for carrier generation",
+      "file": "wave-horizontal.js",
+      "sha256": "dc91470a035a7a3b04c0799661e69a98c00637c895267c37144c0831240de61b",
+      "note": "method reproduced; the 24MB raster field dataset it reads was NOT copied or exported"
+    },
+    {
+      "role": "local-review flow/entry config reference (speed, opacity, reduced motion, draw throttle)",
+      "file": "auth-wave.js",
+      "sha256": "5fc76c27a15fe07591b55ed20790923f93707712bf47b2fa7c0941a02db11184"
+    },
+    {
+      "role": "local-review opacity + theme plate reference",
+      "file": "auth-flow.css",
+      "sha256": "5a341fa8595ec7c48f0d68241e98cabe5167dfd4724adb646b514cdd94b371a2"
+    },
+    {
+      "role": "local-review preset confirmation (medium-60, flow)",
+      "file": "flow-review.js",
+      "sha256": "3e2501e9d3ab465c580d136924d92287d5debc3395c2d0e96d40ec86854fe12e"
+    },
+    {
+      "role": "graphic object used to generate the 60 carrier rows",
+      "file": "grid-nib.json",
+      "sha256": "ce2662b4bcfd561358494273d60847aa76d742f2ad4186b3ab2ee5b357c8ff21",
+      "object": "nib",
+      "kind": "generated-photographic-cutout grayscale grid (120x256), abstract brand object, no text/UI/PII",
+      "note": "upstream image sha256 2fe24ec573aaf49a138b089c7db3ace24bd3b138e6de0f089c6cfbd4765e7d1c (grid file metadata); the image itself is not included"
+    }
+  ],
+  "carrierData": {
+    "file": "carriers-nib-60.json",
+    "jsCopy": "carriers-nib-60.js",
+    "object": "nib",
+    "generation": "wave-horizontal.js sampling (112 paired vertices per carrier, half = sample * pitch * 0.41), nib grid fit centered on a 390x380 stage with a 356px span",
+    "containsImagery": false,
+    "containsText": false
+  },
+  "excludedByPolicy": [
+    "full product-simulation HTML",
+    "24MB horizontal-fields.js raster dataset",
+    "product logo/wordmark/fonts",
+    "auth UI / onboarding flow / screens",
+    "customer data / PII",
+    "internal URLs / API endpoints / storage / analytics / network requests",
+    "internal Slack / document references",
+    "absolute local paths"
+  ],
+  "license": "MIT (ThePlato Inc.), same as repository LICENSE"
+}
