@@ -13,6 +13,31 @@ When product UI appears, use a newly verified capture of the latest production s
 
 Consult the current authorized design-system contract, but preserve actual production pixels if they disagree: record the mismatch instead of recoloring or rebuilding the capture to match tokens. Keep brand graphics outside the product layer.
 
+## Intake — ask once before producing
+
+Before producing anything, confirm the few facts that change the subject, evidence, or format. Ask them **once, grouped and concise** — not as a full checklist, and never re-ask anything the request already supplied. Present the choices you actually observed in the request; do not invent options. Group the ask into:
+
+- **Destination / placement** — where this will appear (channel and placement). This decides whether the task is a raw graphic only, or an actual email/popup/surface implementation. Do not silently treat one request as two final channels.
+- **Dimensions** — W×H or aspect ratio. If the destination is given but the dimensions are not, propose dimensions clearly marked as assumptions and get confirmation before the final export; do not state an assumed size as an established spec.
+- **File / motion format** — only the formats relevant to the destination: PNG / JPG / SVG / HTML for static or editable; MP4 (with duration, fps, and audio) for motion. Ask motion fields only when motion is actually in scope.
+- **Quantity and language** — how many assets and which language(s).
+
+If a fact is already supplied, carry it forward silently. If the chosen channel is unknown, propose dimensions as explicit assumptions and confirm before finalizing. Treat any size, ratio, or format that is not independently verified as a proposal, not an existing production spec.
+
+See [references/online-formats.md](references/online-formats.md) for the generic capability map: which online formats this skill can produce directly, which need an actual implementation surface, and how static, editable, and runtime outputs differ.
+
+## Paired product-present and product-free versions
+
+For finished marketing compositions, by default deliver **two versions of the same message in the same chosen format**: one that includes the product surface, and one brand-only version with no product UI. This is the default flow, not an add-on.
+
+- **Explicit single-version override.** The requester may explicitly ask for only one version (product-present only, or brand-only only). Honor that; do not silently produce the pair.
+- **No valid, latest production access = no fake product version.** If there is no verified latest-production capture or access, do not fabricate product UI and do not substitute an old prototype, mockup, or HTML as if it were current. In that case, deliver the brand-only version honestly, and report the product-present counterpart as blocked pending a real capture. Ask for the capture or the access required. A placeholder is never an acceptable final product version.
+- **Brand-only is a recomposition, not the product version minus a screenshot.** Do not simply delete the screenshot and leave the hole. Recompose a purposeful graphic or title treatment so the brand-only version stands on its own composition.
+
+Raw waveform references, source-only components, and research documents are not finished marketing compositions and do not require product variants.
+
+Both versions share the confirmed message, format, dimensions, and language from intake. Record which version is product-present and which is brand-only, and the evidence/provenance for the product-present one.
+
 ## Brand direction and reference
 
 No geometric or pattern background is mandatory. A plain authorized brand-color field is valid when the message and hierarchy are sufficient. Preserve older assets as optional references.
