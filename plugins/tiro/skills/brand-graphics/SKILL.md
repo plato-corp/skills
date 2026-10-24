@@ -7,6 +7,10 @@ description: Create or reuse Tiro brand graphics and product-evidence compositio
 
 Keep product evidence, brand graphics, and channel composition separate. Use exact product captures and logos; never ask a generated image to redraw them. Compose final copy and channel layouts as separate editable layers.
 
+## Finished content defaults
+
+For final marketing images, read [marketing-composition.md](references/marketing-composition.md): all three color themes, current semantic-token sourcing, title-aligned or omitted logo, shared title calibration and default waveform background. Raw references remain separate from final composition.
+
 ## Product evidence
 
 When product UI appears, use a newly verified capture of the latest production surface. Record its URL, capture time/timezone, platform, theme, available build/deploy identifier, and the design-system ref consulted. Check for relevant UI changes before reusing older captures; mark freshness unverified when production cannot be checked. A prototype or old HTML is not current-production evidence.
@@ -42,9 +46,9 @@ Both versions share the confirmed message, format, dimensions, and language from
 
 ## Brand direction and reference
 
-No geometric or pattern background is mandatory. A plain authorized brand-color field is valid when the message and hierarchy are sufficient. Preserve older assets as optional references.
+Finished marketing content defaults to a waveform background under the composition guide; plain fields remain valid for raw layers and explicit waveform-free briefs. Other geometric/pattern styles are optional. Preserve older assets as references.
 
-The current waveform working reference is **60 horizontal lines, medium weight, slow flow**. This is a review baseline for the requested treatment, not a universal background default, final brand approval, or evidence of production adoption. Thin and thick profiles remain comparison alternatives.
+The current waveform working reference is **60 horizontal lines, medium weight, slow flow**. The2026-10-25 update makes waveform the finished-marketing background default; the exact preset remains a review baseline, not final brand approval or evidence of production adoption. Thin and thick profiles remain comparison alternatives.
 
 - [Open the graphic-only reference](references/waveform-medium-60-horizontal/index.html).
 - [Usage and settings](references/waveform-medium-60-horizontal/README.md).
