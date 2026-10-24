@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiro brand graphic — stepped waveform (medium, 60, horizontal, slow flow)</title>
+<style>
+  :root { color-scheme: light dark; }
+  html[data-theme=light] { --bg:#f1eeea; --fg:#85766A; --panel:#fffdfb; --line:#d8d0c6; --text:#2a2521; --wave-opacity:.273; }
+  html[data-theme=dark]  { --bg:#1b1815; --fg:#CAC0B6; --panel:#24211f; --line:#3a352f; --text:#e9e3db; --wave-opacity:.299; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--text);
+         font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 16px 48px; }
+  h1 { font-size:16px; font-weight:600; margin:0; letter-spacing:.01em; }
+  p.note { max-width:560px; margin:0; text-align:center; color:var(--fg); font-size:13px; }
+  .controls { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+  button { font:inherit; font-size:13px; padding:8px 14px; border:1px solid var(--line);
+           border-radius:10px; background:var(--panel); color:var(--text); cursor:pointer; }
+  button[aria-pressed=true] { border-color:var(--text); }
+  .stage { width:390px; max-width:100%; aspect-ratio:390/380; background:var(--panel);
+           border:1px solid var(--line); border-radius:16px; overflow:hidden; position:relative; }
+  .stage svg { width:100%; height:100%; display:block; color:var(--fg); opacity:var(--wave-opacity); }
+  .stage svg path[data-level="1"] { stroke:currentColor; fill:none; }
+  .stage svg path[data-level] { fill:currentColor; }
+  .stage [data-carrier] { stroke:currentColor; fill:none; }
+  .meta { font-size:12px; color:var(--fg); }
+  @media (prefers-reduced-motion: reduce) { .stage svg { opacity:var(--wave-opacity); } }
+</style>
+</head>
+<body>
+  <h1>Stepped waveform — medium · 60 carriers · horizontal · slow flow</h1>
+  <p class="note">Current working reference captured from the Tiro onboarding backdrop.
+     Not a universal default and not a production-adopted setting — thin/thick are
+     comparison alternatives. Pure geometry; no raster field, no product UI.</p>
+  <div class="controls">
+    <button id="play" aria-pressed="true">Pause motion</button>
+    <button id="theme">Toggle theme</button>
+    <button id="profile" aria-pressed="false">Profile: medium</button>
+  </div>
+  <div class="stage">
+    <svg id="wave" viewBox="0 0 390 380" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+  </div>
+  <div class="meta" id="meta"></div>
+
+<script src="./stepped-wave-geometry.js"></script>
+<script src="./carriers-nib-60.js"></script>
+<script>
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const svg = document.getElementById('wave');
+  const meta = document.getElementById('meta');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Shipped 60-horizontal carrier rows (loaded as a JS global so the file opens
+  // directly from disk with no server; carriers-nib-60.json is the same data).
+  const { rows } = window.TiroWaveCarriers;
+
+  const profiles = ['medium', 'thin', 'thick'];
+  let profileIndex = 0;
+  const horizontal = true;
+
+  // Fixed baseline carriers (one faint hairline per row), opacity shaped exactly
+  // as the local review renderer: .28 * sin(pi*(i+.5)/n)^.65
+  const carrierGroup = document.createElementNS(NS, 'g');
+  svg.append(carrierGroup);
+  rows.forEach((_, i) => {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('data-carrier', '');
+    p.style.strokeWidth = '.38';
+    p.style.opacity = String(.28 * Math.pow(Math.sin(Math.PI * (i + .5) / rows.length), .65));
+    carrierGroup.append(p);
+  });
+  // Five weighted body layers (level 0 = hairline stroke, 1..4 = flat fills).
+  const bodyNodes = [];
+  for (let i = 0; i < 5; i++) {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('data-level', i + 1);
+    svg.append(p);
+    bodyNodes.push(p);
+  }
+
+  let playing = true, elapsed = 0, last = null, frame = 0;
+
+  function frameOnce(time) {
+    const profile = profiles[profileIndex];
+    const g = window.SteppedWaveGeometry.geometry(rows, time, horizontal, !reduced.matches && playing, null, profile);
+    g.field.forEach((d, i) => carrierGroup.children[i].setAttribute('d', d));
+    bodyNodes[0].setAttribute('d', g.guides);
+    bodyNodes[0].style.strokeWidth = String(g.widths[0]);
+    g.bodies.forEach((d, i) => bodyNodes[i + 1].setAttribute('d', d));
+    meta.textContent = `profile=${profile} · carriers=${rows.length} · axis=horizontal · `
+      + `bars=[${g.counts.join(', ')}] · ${reduced.matches ? 'reduced-motion static' : (playing ? 'slow flow' : 'paused')}`;
+  }
+
+  // Slow flow: geometry drift advances at clock*3 px/s, cell=6 (local review value).
+  // Draw is throttled to ~32ms, matching the local review renderer.
+  let drawAt = 0;
+  function tick(now) {
+    frame = 0;
+    if (document.hidden || reduced.matches || !playing) { last = null; return; }
+    if (last !== null) elapsed += (now - last) / 1000;
+    last = now;
+    if (now - drawAt > 32) { frameOnce(elapsed); drawAt = now; }
+    frame = requestAnimationFrame(tick);
+  }
+  function resume() {
+    cancelAnimationFrame(frame); last = null; frameOnce(elapsed);
+    if (!document.hidden && !reduced.matches && playing) frame = requestAnimationFrame(tick);
+  }
+
+  document.getElementById('play').onclick = e => {
+    playing = !playing; e.target.setAttribute('aria-pressed', String(playing));
+    e.target.textContent = playing ? 'Pause motion' : 'Play motion'; resume();
+  };
+  document.getElementById('theme').onclick = () =>
+    document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.getElementById('profile').onclick = e => {
+    profileIndex = (profileIndex + 1) % profiles.length;
+    e.target.textContent = 'Profile: ' + profiles[profileIndex];
+    e.target.setAttribute('aria-pressed', String(profileIndex !== 0));
+    resume();
+  };
+
+  // Offscreen stop + reduced-motion handling.
+  document.addEventListener('visibilitychange', resume);
+  reduced.addEventListener('change', resume);
+  addEventListener('pagehide', () => cancelAnimationFrame(frame));
+
+  resume();
+})();
+</script>
+</body>
+</html>
